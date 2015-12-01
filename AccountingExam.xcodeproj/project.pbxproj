@@ -9,13 +9,20 @@
 /* Begin PBXBuildFile section */
 		A99FAFD61C02B366008E0F21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFD51C02B366008E0F21 /* main.m */; };
 		A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFD81C02B366008E0F21 /* AppDelegate.m */; };
-		A99FAFDC1C02B366008E0F21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFDB1C02B366008E0F21 /* ViewController.m */; };
 		A99FAFDF1C02B366008E0F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99FAFDD1C02B366008E0F21 /* Main.storyboard */; };
 		A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFE01C02B366008E0F21 /* AccountingExam.xcdatamodeld */; };
 		A99FAFE41C02B366008E0F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99FAFE31C02B366008E0F21 /* Assets.xcassets */; };
 		A99FAFE71C02B366008E0F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99FAFE51C02B366008E0F21 /* LaunchScreen.storyboard */; };
 		A99FAFF21C02B366008E0F21 /* AccountingExamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFF11C02B366008E0F21 /* AccountingExamTests.m */; };
 		A99FAFFD1C02B366008E0F21 /* AccountingExamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFFC1C02B366008E0F21 /* AccountingExamUITests.m */; };
+		A99FB00C1C02B545008E0F21 /* PaperInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */; };
+		A99FB0101C02B589008E0F21 /* BookmarkQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */; };
+		A99FB0131C02B59C008E0F21 /* WrongQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0121C02B59C008E0F21 /* WrongQuestionViewController.m */; };
+		A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0151C02B5AB008E0F21 /* QuestonLibraryViewController.m */; };
+		A99FB0191C02B5C3008E0F21 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0181C02B5C3008E0F21 /* MoreViewController.m */; };
+		A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01B1C02B5D2008E0F21 /* FeedbackViewController.m */; };
+		A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */; };
+		A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0211C02B5F4008E0F21 /* ShareViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +47,6 @@
 		A99FAFD51C02B366008E0F21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A99FAFD71C02B366008E0F21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A99FAFD81C02B366008E0F21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A99FAFDA1C02B366008E0F21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A99FAFDB1C02B366008E0F21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A99FAFDE1C02B366008E0F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99FAFE11C02B366008E0F21 /* AccountingExam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountingExam.xcdatamodel; sourceTree = "<group>"; };
 		A99FAFE31C02B366008E0F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +58,22 @@
 		A99FAFF81C02B366008E0F21 /* AccountingExamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccountingExamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99FAFFC1C02B366008E0F21 /* AccountingExamUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountingExamUITests.m; sourceTree = "<group>"; };
 		A99FAFFE1C02B366008E0F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99FB00A1C02B545008E0F21 /* PaperInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperInfoViewController.h; sourceTree = "<group>"; };
+		A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperInfoViewController.m; sourceTree = "<group>"; };
+		A99FB00E1C02B589008E0F21 /* BookmarkQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkQuestionViewController.h; sourceTree = "<group>"; };
+		A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkQuestionViewController.m; sourceTree = "<group>"; };
+		A99FB0111C02B59C008E0F21 /* WrongQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrongQuestionViewController.h; sourceTree = "<group>"; };
+		A99FB0121C02B59C008E0F21 /* WrongQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrongQuestionViewController.m; sourceTree = "<group>"; };
+		A99FB0141C02B5AB008E0F21 /* QuestonLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestonLibraryViewController.h; sourceTree = "<group>"; };
+		A99FB0151C02B5AB008E0F21 /* QuestonLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestonLibraryViewController.m; sourceTree = "<group>"; };
+		A99FB0171C02B5C3008E0F21 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		A99FB0181C02B5C3008E0F21 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		A99FB01A1C02B5D2008E0F21 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		A99FB01B1C02B5D2008E0F21 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		A99FB01D1C02B5E2008E0F21 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		A99FB0201C02B5F4008E0F21 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		A99FB0211C02B5F4008E0F21 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +104,7 @@
 		A99FAFC81C02B366008E0F21 = {
 			isa = PBXGroup;
 			children = (
+				A99FB00D1C02B555008E0F21 /* Controllers */,
 				A99FAFD31C02B366008E0F21 /* AccountingExam */,
 				A99FAFF01C02B366008E0F21 /* AccountingExamTests */,
 				A99FAFFB1C02B366008E0F21 /* AccountingExamUITests */,
@@ -105,8 +127,6 @@
 			children = (
 				A99FAFD71C02B366008E0F21 /* AppDelegate.h */,
 				A99FAFD81C02B366008E0F21 /* AppDelegate.m */,
-				A99FAFDA1C02B366008E0F21 /* ViewController.h */,
-				A99FAFDB1C02B366008E0F21 /* ViewController.m */,
 				A99FAFDD1C02B366008E0F21 /* Main.storyboard */,
 				A99FAFE31C02B366008E0F21 /* Assets.xcassets */,
 				A99FAFE51C02B366008E0F21 /* LaunchScreen.storyboard */,
@@ -141,6 +161,29 @@
 				A99FAFFE1C02B366008E0F21 /* Info.plist */,
 			);
 			path = AccountingExamUITests;
+			sourceTree = "<group>";
+		};
+		A99FB00D1C02B555008E0F21 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A99FB00A1C02B545008E0F21 /* PaperInfoViewController.h */,
+				A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */,
+				A99FB00E1C02B589008E0F21 /* BookmarkQuestionViewController.h */,
+				A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */,
+				A99FB0111C02B59C008E0F21 /* WrongQuestionViewController.h */,
+				A99FB0121C02B59C008E0F21 /* WrongQuestionViewController.m */,
+				A99FB0141C02B5AB008E0F21 /* QuestonLibraryViewController.h */,
+				A99FB0151C02B5AB008E0F21 /* QuestonLibraryViewController.m */,
+				A99FB0171C02B5C3008E0F21 /* MoreViewController.h */,
+				A99FB0181C02B5C3008E0F21 /* MoreViewController.m */,
+				A99FB01A1C02B5D2008E0F21 /* FeedbackViewController.h */,
+				A99FB01B1C02B5D2008E0F21 /* FeedbackViewController.m */,
+				A99FB01D1C02B5E2008E0F21 /* AboutViewController.h */,
+				A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */,
+				A99FB0201C02B5F4008E0F21 /* ShareViewController.h */,
+				A99FB0211C02B5F4008E0F21 /* ShareViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +316,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99FAFDC1C02B366008E0F21 /* ViewController.m in Sources */,
+				A99FB0131C02B59C008E0F21 /* WrongQuestionViewController.m in Sources */,
+				A99FB0191C02B5C3008E0F21 /* MoreViewController.m in Sources */,
+				A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */,
+				A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */,
 				A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
 				A99FAFD61C02B366008E0F21 /* main.m in Sources */,
+				A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */,
+				A99FB0101C02B589008E0F21 /* BookmarkQuestionViewController.m in Sources */,
+				A99FB00C1C02B545008E0F21 /* PaperInfoViewController.m in Sources */,
+				A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
