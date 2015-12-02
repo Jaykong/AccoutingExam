@@ -23,6 +23,14 @@
 		A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01B1C02B5D2008E0F21 /* FeedbackViewController.m */; };
 		A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */; };
 		A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0211C02B5F4008E0F21 /* ShareViewController.m */; };
+		D364BCB91C0DE06F006D2E1F /* bookmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB21C0DE06F006D2E1F /* bookmark@2x.png */; };
+		D364BCBA1C0DE06F006D2E1F /* last@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB31C0DE06F006D2E1F /* last@2x.png */; };
+		D364BCBB1C0DE06F006D2E1F /* last@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB41C0DE06F006D2E1F /* last@3x.png */; };
+		D364BCBC1C0DE06F006D2E1F /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB51C0DE06F006D2E1F /* next@2x.png */; };
+		D364BCBD1C0DE06F006D2E1F /* next@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB61C0DE06F006D2E1F /* next@3x.png */; };
+		D364BCBE1C0DE06F006D2E1F /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB71C0DE06F006D2E1F /* paper@2x.png */; };
+		D364BCBF1C0DE06F006D2E1F /* practice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB81C0DE06F006D2E1F /* practice@2x.png */; };
+		D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */ = {isa = PBXBuildFile; fileRef = D364BCC11C0DF1D6006D2E1F /* PaperView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +82,15 @@
 		A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		A99FB0201C02B5F4008E0F21 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		A99FB0211C02B5F4008E0F21 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		D364BCB21C0DE06F006D2E1F /* bookmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark@2x.png"; sourceTree = "<group>"; };
+		D364BCB31C0DE06F006D2E1F /* last@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last@2x.png"; sourceTree = "<group>"; };
+		D364BCB41C0DE06F006D2E1F /* last@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last@3x.png"; sourceTree = "<group>"; };
+		D364BCB51C0DE06F006D2E1F /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
+		D364BCB61C0DE06F006D2E1F /* next@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@3x.png"; sourceTree = "<group>"; };
+		D364BCB71C0DE06F006D2E1F /* paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper@2x.png"; sourceTree = "<group>"; };
+		D364BCB81C0DE06F006D2E1F /* practice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "practice@2x.png"; sourceTree = "<group>"; };
+		D364BCC01C0DF1D6006D2E1F /* PaperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperView.h; sourceTree = "<group>"; };
+		D364BCC11C0DF1D6006D2E1F /* PaperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +121,7 @@
 		A99FAFC81C02B366008E0F21 = {
 			isa = PBXGroup;
 			children = (
+				D364BCB11C0DE017006D2E1F /* Images */,
 				A99FB00D1C02B555008E0F21 /* Controllers */,
 				A99FAFD31C02B366008E0F21 /* AccountingExam */,
 				A99FAFF01C02B366008E0F21 /* AccountingExamTests */,
@@ -168,6 +186,8 @@
 			children = (
 				A99FB00A1C02B545008E0F21 /* PaperInfoViewController.h */,
 				A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */,
+				D364BCC01C0DF1D6006D2E1F /* PaperView.h */,
+				D364BCC11C0DF1D6006D2E1F /* PaperView.m */,
 				A99FB00E1C02B589008E0F21 /* BookmarkQuestionViewController.h */,
 				A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */,
 				A99FB0111C02B59C008E0F21 /* WrongQuestionViewController.h */,
@@ -184,6 +204,20 @@
 				A99FB0211C02B5F4008E0F21 /* ShareViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D364BCB11C0DE017006D2E1F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D364BCB21C0DE06F006D2E1F /* bookmark@2x.png */,
+				D364BCB31C0DE06F006D2E1F /* last@2x.png */,
+				D364BCB41C0DE06F006D2E1F /* last@3x.png */,
+				D364BCB51C0DE06F006D2E1F /* next@2x.png */,
+				D364BCB61C0DE06F006D2E1F /* next@3x.png */,
+				D364BCB71C0DE06F006D2E1F /* paper@2x.png */,
+				D364BCB81C0DE06F006D2E1F /* practice@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,8 +323,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D364BCBD1C0DE06F006D2E1F /* next@3x.png in Resources */,
+				D364BCBE1C0DE06F006D2E1F /* paper@2x.png in Resources */,
 				A99FAFE71C02B366008E0F21 /* LaunchScreen.storyboard in Resources */,
+				D364BCBB1C0DE06F006D2E1F /* last@3x.png in Resources */,
+				D364BCBC1C0DE06F006D2E1F /* next@2x.png in Resources */,
 				A99FAFE41C02B366008E0F21 /* Assets.xcassets in Resources */,
+				D364BCBA1C0DE06F006D2E1F /* last@2x.png in Resources */,
+				D364BCBF1C0DE06F006D2E1F /* practice@2x.png in Resources */,
+				D364BCB91C0DE06F006D2E1F /* bookmark@2x.png in Resources */,
 				A99FAFDF1C02B366008E0F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +362,7 @@
 				A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */,
 				A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */,
 				A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */,
+				D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
 				A99FAFD61C02B366008E0F21 /* main.m in Sources */,
 				A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */,
@@ -552,6 +594,7 @@
 				A99FB0031C02B366008E0F21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A99FB0041C02B366008E0F21 /* Build configuration list for PBXNativeTarget "AccountingExamTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +603,7 @@
 				A99FB0061C02B366008E0F21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A99FB0071C02B366008E0F21 /* Build configuration list for PBXNativeTarget "AccountingExamUITests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +612,7 @@
 				A99FB0091C02B366008E0F21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
