@@ -5,9 +5,9 @@
 //  Created by trainer on 11/23/15.
 //  Copyright © 2015 trainer. All rights reserved.
 //
-
+#import "JsonData.h"
 #import "PaperInfoViewController.h"
-
+#import "PaperView.h"
 @interface PaperInfoViewController ()
 
 @end
@@ -16,7 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UINib *nib = [UINib nibWithNibName:@"PaperView" bundle:nil];
+   NSArray *nibs = [nib instantiateWithOwner:self options:nil];
+    PaperView *paperView = [nibs objectAtIndex:0];
+    [paperView addPaperView];
+    self.view = paperView;
+    JsonData *jsonData = [[JsonData alloc] init];
+   // [jsonData getPapers];
+ // NSDictionary *dic =  jsonData.jsonDic;
+    //NSLog(@"%@",dic);
+    
+    [jsonData getQuestions];
 }
 
 - (void)didReceiveMemoryWarning {
