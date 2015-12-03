@@ -5,28 +5,47 @@
 //  Created by trainer on 11/23/15.
 //  Copyright © 2015 trainer. All rights reserved.
 //
-#import "JsonData.h"
+#import "ProgressHUD.h"
 #import "PaperInfoViewController.h"
-#import "PaperView.h"
-@interface PaperInfoViewController ()
 
+#import "NSArray+JsonDataFormating.h"
+@interface PaperInfoViewController ()
+{
+  
+    NSArray *paperTitles;
+    NSArray *paperTypes;
+}
 @end
 
 @implementation PaperInfoViewController
-
+@synthesize paperView = paperView;
+-(void)getPaperViewFromNibAndConfigure{
+//    UINib *nib = [UINib nibWithNibName:@"PaperView" bundle:nil];
+//    NSArray *nibs = [nib instantiateWithOwner:self options:nil];
+//    paperView = [nibs objectAtIndex:0];
+    [paperView addPaperView];
+    paperView.tableview1.delegate = self;
+    paperView.tableview1.dataSource = self;
+    paperView.tableview2.delegate = self;
+    paperView.tableview2.dataSource = self;
+    paperView.tableview3.delegate = self;
+    paperView.tableview3.dataSource = self;
+    
+   
+ 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UINib *nib = [UINib nibWithNibName:@"PaperView" bundle:nil];
-   NSArray *nibs = [nib instantiateWithOwner:self options:nil];
-    PaperView *paperView = [nibs objectAtIndex:0];
-    [paperView addPaperView];
-    self.view = paperView;
-    JsonData *jsonData = [[JsonData alloc] init];
-   // [jsonData getPapers];
- // NSDictionary *dic =  jsonData.jsonDic;
-    //NSLog(@"%@",dic);
+    [ProgressHUD show:@"加载中..."];
     
-    [jsonData getQuestions];
+    [self getPaperViewFromNibAndConfigure];
+   // self.view = paperView ;
+    
+    JsonData *jsonData = [[JsonData alloc] init];
+    
+    [jsonData getPapers];
+    jsonData.delegate = self;
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +53,71 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)reConfigurePaperView {
+    for (int i = 0; i < paperTypes.count; ++i) {
+        [paperView.segmentControl setTitle:[paperTypes objectAtIndex:i] forSegmentAtIndex:i];
+    }
+    
+    [paperView.tableview1 reloadData];
+    [paperView.tableview2 reloadData];
+    [paperView.tableview3 reloadData];
+    [ProgressHUD  dismiss];
+
+}
+
+-(void)DidFinishingLoading:(JsonData *)jsonData{
+    
+    paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
+    paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self reConfigurePaperView];
+    });
+    
+}
+#pragma mark - Tableview DataSource Delegate
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [paperTitles count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *const Cell = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell];
+    }
+    cell.textLabel.text = [paperTitles objectAtIndex:indexPath.row];
+    return cell;
+}
+
+#pragma mark - Scrollview Delegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //NSLog(@"%f",scrollView.contentOffset.x);
+    CGFloat width = [[UIScreen mainScreen]bounds].size.width;
+    //CGFloat version =  [[[UIDevice currentDevice] ]floatValue];
+   
+  //@"iPhone 4S"
+    
+    
+        if (scrollView.contentOffset.x < width) {
+            paperView.segmentControl.selectedSegmentIndex = 0;
+            
+        }
+        if (scrollView.contentOffset.x >= width) {
+            paperView.segmentControl.selectedSegmentIndex = 1;
+            
+        }
+        
+        if (scrollView.contentOffset.x >= 2 * width) {
+            paperView.segmentControl.selectedSegmentIndex = 2;
+        }
+        
+    
+    
+   
+    
+    
+    
+}
 /*
 #pragma mark - Navigation
 

@@ -61,27 +61,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="StO-AJ-RNs">
-                                <rect key="frame" x="0.0" y="64" width="600" height="29"/>
+                                <rect key="frame" x="20" y="64" width="540" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
+                                    <segment title=""/>
                                 </segments>
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-y2-PVV">
                                 <rect key="frame" x="0.0" y="93" width="600" height="458"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="PNz-Ag-Bfj" id="4Zj-jd-xc2"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Ya8-y2-PVV" secondAttribute="trailing" constant="-20" id="4cg-QI-ZXe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="StO-AJ-RNs" secondAttribute="trailing" constant="-20" id="9T5-Lw-KNm"/>
                             <constraint firstItem="Ya8-y2-PVV" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="DC8-xX-9iy"/>
                             <constraint firstItem="StO-AJ-RNs" firstAttribute="top" secondItem="Da8-mI-jUi" secondAttribute="bottom" id="IW7-yg-pVB"/>
-                            <constraint firstItem="StO-AJ-RNs" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="JsO-5o-t6V"/>
+                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="trailing" secondItem="StO-AJ-RNs" secondAttribute="trailing" constant="40" id="LMB-Rx-LBi"/>
                             <constraint firstItem="Ya8-y2-PVV" firstAttribute="top" secondItem="StO-AJ-RNs" secondAttribute="bottom" constant="1" id="ND0-56-uYd"/>
+                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="leading" secondItem="StO-AJ-RNs" secondAttribute="leading" constant="-20" id="PJc-JI-93M"/>
                             <constraint firstItem="AFP-Kp-coD" firstAttribute="top" secondItem="Ya8-y2-PVV" secondAttribute="bottom" id="pAL-ma-C7U"/>
                         </constraints>
                         <connections>
@@ -90,10 +94,13 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ptD-ZD-1c0"/>
+                    <connections>
+                        <outlet property="paperView" destination="ats-kz-1dT" id="3Z4-Nx-VND"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVK-7c-5cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="-452"/>
+            <point key="canvasLocation" x="-870" y="-734"/>
         </scene>
         <!--Bookmark Question View Controller-->
         <scene sceneID="AcI-4u-RST">

@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@protocol JsonDataDelegate;
 @interface JsonData : NSObject
-@property (nonatomic, copy)NSDictionary *jsonDic;
+@property (nonatomic, copy)NSArray *jsonArr;
+@property (nonatomic, weak) id<JsonDataDelegate>delegate;
 -(void)getPapers;
 -(void)getQuestions;
--(void)getQuestions;
+
+
+
+@end
+@protocol JsonDataDelegate
+
+-(void)DidFinishingLoading:(JsonData *)jsonData;
+
 @end

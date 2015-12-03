@@ -7,26 +7,28 @@
 //
 
 #import "JsonData.h"
-#import "ProgressHUD.h"
+
 @implementation JsonData
 //@"http://112.124.122.38/acountingExam/getPaperInfo.php"
 //http://112.124.122.38/acountingExam/getQuestions.php
 
 -(void)getPapers{
-    [ProgressHUD show:@"加载中..."];
+   
     NSURLSession *session = [NSURLSession sharedSession];
     NSURL *url = [NSURL URLWithString:@"http://112.124.122.38/acountingExam/getPaperInfo.php"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *jSONDic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        if (!jSONDic) {
+        NSArray *jsonArr =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        if (!jsonArr) {
             NSLog(@"Json Serializtion error:%@",error.description);
             
         } else {
-            _jsonDic = jSONDic;
-            NSLog(@"%@",_jsonDic);
+            _jsonArr = jsonArr;
+            [_delegate DidFinishingLoading:self];
+            
+            NSLog(@"%@",_jsonArr);
         }
-        [ProgressHUD  dismiss];
+       
     }];
     
     [task resume];
@@ -34,7 +36,7 @@
 
 -(void)getQuestions {
     {
-        [ProgressHUD show:@"加载中..."];
+        
         NSURLSession *session = [NSURLSession sharedSession];
         NSURL *url = [NSURL URLWithString:@"http://112.124.122.38/acountingExam/getQuestions.php"];
         
@@ -52,10 +54,10 @@
                 NSLog(@"Json Serializtion error:%@",error.description);
                 
             } else {
-                _jsonDic = jSONDic;
-                NSLog(@"%@",_jsonDic);
+                
+                NSLog(@"%@",_jsonArr);
             }
-            [ProgressHUD  dismiss];
+            
         }];
         
         [task resume];

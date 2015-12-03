@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PaperView : UIView<UITableViewDataSource>
+@interface PaperView : UIView
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property UITableView *tableview1;
 @property UITableView *tableview2;
 @property UITableView *tableview3;
--(instancetype)initPaperView;
+
 -(void)addPaperView;
 @end

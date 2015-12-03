@@ -35,6 +35,7 @@
 		D364BCBE1C0DE06F006D2E1F /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB71C0DE06F006D2E1F /* paper@2x.png */; };
 		D364BCBF1C0DE06F006D2E1F /* practice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB81C0DE06F006D2E1F /* practice@2x.png */; };
 		D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */ = {isa = PBXBuildFile; fileRef = D364BCC11C0DF1D6006D2E1F /* PaperView.m */; };
+		D397D6091C109B8700EE3111 /* NSArray+JsonDataFormating.m in Sources */ = {isa = PBXBuildFile; fileRef = D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		D364BCB81C0DE06F006D2E1F /* practice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "practice@2x.png"; sourceTree = "<group>"; };
 		D364BCC01C0DF1D6006D2E1F /* PaperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperView.h; sourceTree = "<group>"; };
 		D364BCC11C0DF1D6006D2E1F /* PaperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperView.m; sourceTree = "<group>"; };
+		D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JsonDataFormating.h"; sourceTree = "<group>"; };
+		D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JsonDataFormating.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 				A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */,
 				A9DA49531C0E91E90072E6DA /* JsonData.h */,
 				A9DA49541C0E91E90072E6DA /* JsonData.m */,
+				D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */,
+				D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */,
 				D364BCC01C0DF1D6006D2E1F /* PaperView.h */,
 				D364BCC11C0DF1D6006D2E1F /* PaperView.m */,
 				A9DA49511C0E8BD60072E6DA /* PaperView.xib */,
@@ -399,6 +404,7 @@
 				D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */,
 				A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
+				D397D6091C109B8700EE3111 /* NSArray+JsonDataFormating.m in Sources */,
 				A99FAFD61C02B366008E0F21 /* main.m in Sources */,
 				A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */,
 				A9DA495D1C0E9AEF0072E6DA /* ProgressHUD.m in Sources */,
