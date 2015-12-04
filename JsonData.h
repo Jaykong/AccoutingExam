@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JsonDataManager.h"
 @protocol JsonDataDelegate;
 @interface JsonData : NSObject
 @property (nonatomic, copy)NSArray *jsonArr;
@@ -14,9 +15,8 @@
 -(void)getPapers;
 -(void)getQuestions;
 
-
-
 @end
+
 @protocol JsonDataDelegate
 
 -(void)DidFinishingLoading:(JsonData *)jsonData;

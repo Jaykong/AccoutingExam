@@ -32,4 +32,12 @@
     }
     return papers;
 }
+
++(NSArray *)arrayOfTitlesWithPaperInfos:(NSArray *)paperInfos {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (PaperInfo *p in paperInfos) {
+        [arr addObject:p.title];
+    }
+    return arr;
+}
 @end

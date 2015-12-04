@@ -27,6 +27,9 @@
 		A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DA49541C0E91E90072E6DA /* JsonData.m */; };
 		A9DA495C1C0E9AEF0072E6DA /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9DA49591C0E9AEF0072E6DA /* ProgressHUD.bundle */; };
 		A9DA495D1C0E9AEF0072E6DA /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DA495B1C0E9AEF0072E6DA /* ProgressHUD.m */; };
+		A9DA49841C112E690072E6DA /* PaperInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DA49811C112E690072E6DA /* PaperInfo+CoreDataProperties.m */; };
+		A9DA49851C112E690072E6DA /* PaperInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DA49831C112E690072E6DA /* PaperInfo.m */; };
+		A9DA49881C112EDC0072E6DA /* JsonDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DA49871C112EDC0072E6DA /* JsonDataManager.m */; };
 		D364BCB91C0DE06F006D2E1F /* bookmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB21C0DE06F006D2E1F /* bookmark@2x.png */; };
 		D364BCBA1C0DE06F006D2E1F /* last@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB31C0DE06F006D2E1F /* last@2x.png */; };
 		D364BCBB1C0DE06F006D2E1F /* last@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB41C0DE06F006D2E1F /* last@3x.png */; };
@@ -93,6 +96,12 @@
 		A9DA49591C0E9AEF0072E6DA /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		A9DA495A1C0E9AEF0072E6DA /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		A9DA495B1C0E9AEF0072E6DA /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		A9DA49801C112E690072E6DA /* PaperInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PaperInfo+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		A9DA49811C112E690072E6DA /* PaperInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PaperInfo+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		A9DA49821C112E690072E6DA /* PaperInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperInfo.h; sourceTree = SOURCE_ROOT; };
+		A9DA49831C112E690072E6DA /* PaperInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperInfo.m; sourceTree = SOURCE_ROOT; };
+		A9DA49861C112EDC0072E6DA /* JsonDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDataManager.h; sourceTree = "<group>"; };
+		A9DA49871C112EDC0072E6DA /* JsonDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDataManager.m; sourceTree = "<group>"; };
 		D364BCB21C0DE06F006D2E1F /* bookmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark@2x.png"; sourceTree = "<group>"; };
 		D364BCB31C0DE06F006D2E1F /* last@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last@2x.png"; sourceTree = "<group>"; };
 		D364BCB41C0DE06F006D2E1F /* last@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last@3x.png"; sourceTree = "<group>"; };
@@ -164,6 +173,10 @@
 				A99FAFE51C02B366008E0F21 /* LaunchScreen.storyboard */,
 				A99FAFE81C02B366008E0F21 /* Info.plist */,
 				A99FAFE01C02B366008E0F21 /* AccountingExam.xcdatamodeld */,
+				A9DA49801C112E690072E6DA /* PaperInfo+CoreDataProperties.h */,
+				A9DA49811C112E690072E6DA /* PaperInfo+CoreDataProperties.m */,
+				A9DA49821C112E690072E6DA /* PaperInfo.h */,
+				A9DA49831C112E690072E6DA /* PaperInfo.m */,
 				A99FAFD41C02B366008E0F21 /* Supporting Files */,
 			);
 			path = AccountingExam;
@@ -200,6 +213,8 @@
 			children = (
 				A99FB00A1C02B545008E0F21 /* PaperInfoViewController.h */,
 				A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */,
+				A9DA49861C112EDC0072E6DA /* JsonDataManager.h */,
+				A9DA49871C112EDC0072E6DA /* JsonDataManager.m */,
 				A9DA49531C0E91E90072E6DA /* JsonData.h */,
 				A9DA49541C0E91E90072E6DA /* JsonData.m */,
 				D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */,
@@ -399,11 +414,13 @@
 				A99FB0131C02B59C008E0F21 /* WrongQuestionViewController.m in Sources */,
 				A99FB0191C02B5C3008E0F21 /* MoreViewController.m in Sources */,
 				A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */,
+				A9DA49881C112EDC0072E6DA /* JsonDataManager.m in Sources */,
 				A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */,
 				A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */,
 				D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */,
 				A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
+				A9DA49841C112E690072E6DA /* PaperInfo+CoreDataProperties.m in Sources */,
 				D397D6091C109B8700EE3111 /* NSArray+JsonDataFormating.m in Sources */,
 				A99FAFD61C02B366008E0F21 /* main.m in Sources */,
 				A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */,
@@ -411,6 +428,7 @@
 				A99FB0101C02B589008E0F21 /* BookmarkQuestionViewController.m in Sources */,
 				A99FB00C1C02B545008E0F21 /* PaperInfoViewController.m in Sources */,
 				A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */,
+				A9DA49851C112E690072E6DA /* PaperInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

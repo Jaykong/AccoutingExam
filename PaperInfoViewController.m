@@ -7,7 +7,7 @@
 //
 #import "ProgressHUD.h"
 #import "PaperInfoViewController.h"
-
+#import "JsonDataManager.h"
 #import "NSArray+JsonDataFormating.h"
 @interface PaperInfoViewController ()
 {
@@ -66,9 +66,14 @@
 }
 
 -(void)DidFinishingLoading:(JsonData *)jsonData{
+    JsonDataManager *manager = [[JsonDataManager alloc] init];
+    [manager insertAllPapers:jsonData.jsonArr];
     
-    paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
-    paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
+    NSArray *paperInfos = [manager getPaperInfos];
+   paperTitles = [NSArray arrayOfTitlesWithPaperInfos:paperInfos];
+    
+//    paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
+//    paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self reConfigurePaperView];
     });

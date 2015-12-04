@@ -24,6 +24,8 @@
             
         } else {
             _jsonArr = jsonArr;
+            JsonDataManager *jsonDataManager = [[JsonDataManager alloc] init];
+            
             [_delegate DidFinishingLoading:self];
             
             NSLog(@"%@",_jsonArr);

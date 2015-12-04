@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-
+#import "PaperInfo+CoreDataProperties.h"
 @interface NSArray (JsonDataFormating)
 
-+(NSArray *)returnPaperTitlesFromJsonArray:(NSArray *)parentArr;
-+(NSArray *)returnPaperTypesFromJsonArray:(NSArray *)parentArr;
+//+(NSArray *)returnPaperTitlesFromJsonArray:(NSArray *)parentArr;
+//+(NSArray *)returnPaperTypesFromJsonArray:(NSArray *)parentArr;
++(NSArray *)arrayOfTitlesWithPaperInfos:(NSArray *)paperInfos;
 @end
