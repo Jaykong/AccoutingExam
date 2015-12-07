@@ -10,18 +10,42 @@
 
 @implementation PaperView
 
+- (IBAction)segmentValueChanged:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            _scrollView.contentOffset = CGPointMake(0, 0);
+           
+           
+            //[_tableview1 reloadData];
+           
+            break;
+        case 1:
+            _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width, 0);
+            //[_tableview2 reloadData];
+            break;
+        case 2:
+            _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width * 2, 0);
+           // [_tableview3 reloadData];
+            break;
+        default:
+            break;
+    }
+
+}
 
 -(void)addPaperView {
+    _segmentControl.translatesAutoresizingMaskIntoConstraints = NO;
     _scrollView.pagingEnabled = YES;
    // _scrollView.alwaysBounceHorizontal = YES;
    _scrollView.alwaysBounceVertical=NO;
     _scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    CGFloat scrollX = 0;
-    CGFloat scrollY =  _scrollView.bounds.origin.y;
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    CGFloat scrollX = _scrollView.frame.origin.x;
+    CGFloat scrollY = 0; //_scrollView.frame.origin.y;
+    CGFloat width = _scrollView.bounds.size.width;
+    CGFloat height = _scrollView.bounds.size.height;
     _scrollView.contentSize = CGSizeMake(3 * width, height);
-    _scrollView.frame = CGRectMake(scrollX,scrollY , width, height);
+   // _scrollView.frame = CGRectMake(scrollX,scrollY , width, height);
     
     _tableview1 = [[UITableView alloc] initWithFrame:_scrollView.bounds style:UITableViewStylePlain];
     

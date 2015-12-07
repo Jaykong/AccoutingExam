@@ -14,4 +14,5 @@
 //+(NSArray *)returnPaperTitlesFromJsonArray:(NSArray *)parentArr;
 //+(NSArray *)returnPaperTypesFromJsonArray:(NSArray *)parentArr;
 +(NSArray *)arrayOfTitlesWithPaperInfos:(NSArray *)paperInfos;
++(NSArray *)arrayOfTypesWithPaperInfos:(NSArray *)paperInfos;
 @end

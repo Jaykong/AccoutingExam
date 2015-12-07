@@ -19,6 +19,8 @@
 
 @implementation PaperInfoViewController
 @synthesize paperView = paperView;
+
+
 -(void)getPaperViewFromNibAndConfigure{
 //    UINib *nib = [UINib nibWithNibName:@"PaperView" bundle:nil];
 //    NSArray *nibs = [nib instantiateWithOwner:self options:nil];
@@ -71,7 +73,7 @@
     
     NSArray *paperInfos = [manager getPaperInfos];
    paperTitles = [NSArray arrayOfTitlesWithPaperInfos:paperInfos];
-    
+    paperTypes = [NSArray arrayOfTypesWithPaperInfos:paperInfos];
 //    paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
 //    paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -121,6 +123,10 @@
    
     
     
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 /*

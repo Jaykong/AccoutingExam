@@ -24,7 +24,7 @@
             
         } else {
             _jsonArr = jsonArr;
-            JsonDataManager *jsonDataManager = [[JsonDataManager alloc] init];
+            //JsonDataManager *jsonDataManager = [[JsonDataManager alloc] init];
             
             [_delegate DidFinishingLoading:self];
             

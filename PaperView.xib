@@ -40,6 +40,7 @@
                 <outlet property="scrollView" destination="VWa-Ms-8ml" id="mN1-8M-k6J"/>
                 <outlet property="segmentControl" destination="Uot-8t-tvE" id="Phz-hU-EgF"/>
             </connections>
+            <point key="canvasLocation" x="252" y="594"/>
         </view>
     </objects>
 </document>

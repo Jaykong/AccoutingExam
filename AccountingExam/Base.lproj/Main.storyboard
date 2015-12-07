@@ -57,20 +57,23 @@
                         <viewControllerLayoutGuide type="bottom" id="AFP-Kp-coD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ats-kz-1dT" customClass="PaperView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="StO-AJ-RNs">
-                                <rect key="frame" x="20" y="64" width="540" height="29"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                     <segment title=""/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="ats-kz-1dT" eventType="valueChanged" id="mCZ-fz-vlp"/>
+                                </connections>
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-y2-PVV">
-                                <rect key="frame" x="0.0" y="93" width="600" height="458"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="594"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="PNz-Ag-Bfj" id="4Zj-jd-xc2"/>
@@ -80,13 +83,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ya8-y2-PVV" secondAttribute="trailing" constant="-20" id="4cg-QI-ZXe"/>
-                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="DC8-xX-9iy"/>
-                            <constraint firstItem="StO-AJ-RNs" firstAttribute="top" secondItem="Da8-mI-jUi" secondAttribute="bottom" id="IW7-yg-pVB"/>
-                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="trailing" secondItem="StO-AJ-RNs" secondAttribute="trailing" constant="40" id="LMB-Rx-LBi"/>
-                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="top" secondItem="StO-AJ-RNs" secondAttribute="bottom" constant="1" id="ND0-56-uYd"/>
-                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="leading" secondItem="StO-AJ-RNs" secondAttribute="leading" constant="-20" id="PJc-JI-93M"/>
-                            <constraint firstItem="AFP-Kp-coD" firstAttribute="top" secondItem="Ya8-y2-PVV" secondAttribute="bottom" id="pAL-ma-C7U"/>
+                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="DM9-4l-X5I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="StO-AJ-RNs" secondAttribute="trailing" constant="-20" id="Tfs-ty-gfg"/>
+                            <constraint firstItem="AFP-Kp-coD" firstAttribute="top" secondItem="Ya8-y2-PVV" secondAttribute="bottom" id="boP-6I-bzs"/>
+                            <constraint firstItem="StO-AJ-RNs" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="l8k-Kh-tMJ"/>
+                            <constraint firstItem="StO-AJ-RNs" firstAttribute="top" secondItem="Da8-mI-jUi" secondAttribute="bottom" id="lxK-o5-YMW"/>
+                            <constraint firstItem="Ya8-y2-PVV" firstAttribute="top" secondItem="StO-AJ-RNs" secondAttribute="bottom" constant="1" id="qks-jA-YaU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ya8-y2-PVV" secondAttribute="trailing" constant="-20" id="vHJ-fR-mso"/>
                         </constraints>
                         <connections>
                             <outlet property="scrollView" destination="Ya8-y2-PVV" id="dfQ-FY-rV8"/>
@@ -94,13 +97,14 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ptD-ZD-1c0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="paperView" destination="ats-kz-1dT" id="3Z4-Nx-VND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVK-7c-5cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-870" y="-734"/>
+            <point key="canvasLocation" x="-1219" y="-687"/>
         </scene>
         <!--Bookmark Question View Controller-->
         <scene sceneID="AcI-4u-RST">
@@ -180,7 +184,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deg-2g-wIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-168" y="-452"/>
+            <point key="canvasLocation" x="-468" y="-676"/>
         </scene>
         <!--收藏-->
         <scene sceneID="FAi-KR-p4V">
