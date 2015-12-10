@@ -36,14 +36,14 @@
     [task resume];
 }
 
--(void)getQuestions {
+-(void)getQuestionsWithPaperID:(NSString*) paperID {
     {
         
         NSURLSession *session = [NSURLSession sharedSession];
         NSURL *url = [NSURL URLWithString:@"http://112.124.122.38/acountingExam/getQuestions.php"];
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-        NSString *para = [NSString stringWithFormat:@"paperID=5659eea5469f3"] ;
+        NSString *para = [NSString stringWithFormat:@"paperID=56606d9eb7024"] ;
         request.HTTPMethod = @"POST";
         request.HTTPBody = [para dataUsingEncoding:NSUTF8StringEncoding];
         
@@ -51,13 +51,14 @@
             NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"%@",str);
             
-            NSDictionary *jSONDic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            if (!jSONDic) {
+            NSArray *jSONArr =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            if (!jSONArr) {
                 NSLog(@"Json Serializtion error:%@",error.description);
                 
             } else {
+                _jsonArr = jSONArr;
+                [_delegate DidFinishingLoading:self];
                 
-                NSLog(@"%@",_jsonArr);
             }
             
         }];

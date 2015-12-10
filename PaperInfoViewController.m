@@ -14,6 +14,7 @@
   
     NSArray *paperTitles;
     NSArray *paperTypes;
+    NSArray *paperInfos;
 }
 @end
 
@@ -71,11 +72,11 @@
     JsonDataManager *manager = [[JsonDataManager alloc] init];
     [manager insertAllPapers:jsonData.jsonArr];
     
-    NSArray *paperInfos = [manager getPaperInfos];
+    paperInfos = [manager getPaperInfos];
    paperTitles = [NSArray arrayOfTitlesWithPaperInfos:paperInfos];
     paperTypes = [NSArray arrayOfTypesWithPaperInfos:paperInfos];
-//    paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
-//    paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
+//paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
+//paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self reConfigurePaperView];
     });
@@ -128,6 +129,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    PaperInfo *paperInfo = [paperInfos objectAtIndex:indexPath.row];
+    
+    PracticeViewController *controller = [[PracticeViewController alloc] initWithNibName:@"PracticeViewController" bundle:nil];
+    
+    controller.paperInfo = paperInfo;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 /*
 #pragma mark - Navigation

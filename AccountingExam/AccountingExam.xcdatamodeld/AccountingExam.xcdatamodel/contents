@@ -6,7 +6,14 @@
         <attribute name="paperType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="paperID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paperType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="PaperInfo" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Question" positionX="-63" positionY="9" width="128" height="105"/>
     </elements>
 </model>

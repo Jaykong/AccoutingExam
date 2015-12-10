@@ -15,6 +15,8 @@
 //获取数据
 -(NSArray *)getPaperInfos;
 -(void)insertAllPapers:(NSArray *)jsonArr;
+-(void)insertAllQuestions:(NSArray *)jsonArr;
+-(NSArray *)getQuestions;
 @end
 
 //@protocol JsonDataManagerDelegate

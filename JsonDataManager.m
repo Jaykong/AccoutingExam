@@ -8,7 +8,9 @@
 
 #import "JsonDataManager.h"
 #import "AppDelegate.h"
+#import "Question+CoreDataProperties.h"
 static NSString *const PaperInfoEntityName = @"PaperInfo";
+static NSString *const QuestionEntityName = @"Question";
 @implementation JsonDataManager
 
 
@@ -41,5 +43,36 @@ static NSString *const PaperInfoEntityName = @"PaperInfo";
         [self insertIntoPaperInfo:title paperID:paperID paperType:paperType];
     }
     
+}
+#pragma mark - Questions Operations
+-(void)insertIntoQuestion:(NSString *)title paperID:(NSString *)paperID paperType:(NSString *)paperType questionID:(NSString *)questionID {
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    Question *question = [NSEntityDescription insertNewObjectForEntityForName:QuestionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
+    
+    question.title = title;
+    question.paperID = paperID;
+    question.paperType = paperType;
+    question.questionID = questionID;
+    
+}
+-(void)insertAllQuestions:(NSArray *)jsonArr {
+    for (NSDictionary *dic in jsonArr) {
+        NSString *title = [dic valueForKey:@"title"];
+        NSString *paperID = [dic valueForKey:@"paperID"];
+        NSString *paperType = [dic valueForKey:@"paperType"];
+         NSString *questionID = [dic valueForKey:@"questionID"];
+        [self insertIntoQuestion:title paperID:paperID paperType:paperType questionID:questionID];
+    }
+    
+}
+-(NSArray *)getQuestions {
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:QuestionEntityName];
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"paperID like %@",_paperID];
+    //request.predicate =
+    NSError *error = [[NSError alloc] init];
+    NSArray *arr = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    return arr;
 }
 @end

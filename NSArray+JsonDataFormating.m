@@ -7,8 +7,16 @@
 //
 
 #import "NSArray+JsonDataFormating.h"
-
+#import "Question+CoreDataProperties.h"
 @implementation NSArray(JsonDataFormating)
++(NSArray *)arrayOfTitlesWithQuestions:(NSArray *)questions {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (Question *q in questions) {
+        [arr addObject:q.title];
+    }
+    return arr;
+}
+
 //+(NSArray *)returnPaperTitlesFromJsonArray:(NSArray *)parentArr{
 //    NSMutableArray *papers = [[NSMutableArray alloc] init];
 //    for (NSDictionary *subDic in parentArr) {
@@ -40,7 +48,6 @@
     }
     return arr;
 }
-
 +(NSArray *)arrayOfTypesWithPaperInfos:(NSArray *)paperInfos {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (PaperInfo *p in paperInfos) {

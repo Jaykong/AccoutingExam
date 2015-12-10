@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A925F0D81C17D30500174971 /* PracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925F0D71C17D30500174971 /* PracticeViewController.m */; };
+		A925F0DA1C17D38600174971 /* PracticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A925F0D91C17D38600174971 /* PracticeViewController.xib */; };
+		A925F0DF1C17DAEB00174971 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A925F0DC1C17DAEB00174971 /* Question+CoreDataProperties.m */; };
+		A925F0E01C17DAEB00174971 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = A925F0DE1C17DAEB00174971 /* Question.m */; };
 		A99FAFD61C02B366008E0F21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFD51C02B366008E0F21 /* main.m */; };
 		A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FAFD81C02B366008E0F21 /* AppDelegate.m */; };
 		A99FAFDF1C02B366008E0F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99FAFDD1C02B366008E0F21 /* Main.storyboard */; };
@@ -59,6 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A925F0D61C17D30500174971 /* PracticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeViewController.h; sourceTree = "<group>"; };
+		A925F0D71C17D30500174971 /* PracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeViewController.m; sourceTree = "<group>"; };
+		A925F0D91C17D38600174971 /* PracticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PracticeViewController.xib; sourceTree = "<group>"; };
+		A925F0DB1C17DAEB00174971 /* Question+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Question+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A925F0DC1C17DAEB00174971 /* Question+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Question+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A925F0DD1C17DAEB00174971 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		A925F0DE1C17DAEB00174971 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		A99FAFD11C02B366008E0F21 /* AccountingExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountingExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99FAFD51C02B366008E0F21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A99FAFD71C02B366008E0F21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,6 +154,9 @@
 		A99FAFC81C02B366008E0F21 = {
 			isa = PBXGroup;
 			children = (
+				A925F0D61C17D30500174971 /* PracticeViewController.h */,
+				A925F0D71C17D30500174971 /* PracticeViewController.m */,
+				A925F0D91C17D38600174971 /* PracticeViewController.xib */,
 				A9DA49571C0E9AB40072E6DA /* ThirdParty */,
 				D364BCB11C0DE017006D2E1F /* Images */,
 				A99FB00D1C02B555008E0F21 /* Controllers */,
@@ -173,6 +187,10 @@
 				A99FAFE51C02B366008E0F21 /* LaunchScreen.storyboard */,
 				A99FAFE81C02B366008E0F21 /* Info.plist */,
 				A99FAFE01C02B366008E0F21 /* AccountingExam.xcdatamodeld */,
+				A925F0DB1C17DAEB00174971 /* Question+CoreDataProperties.h */,
+				A925F0DC1C17DAEB00174971 /* Question+CoreDataProperties.m */,
+				A925F0DD1C17DAEB00174971 /* Question.h */,
+				A925F0DE1C17DAEB00174971 /* Question.m */,
 				A9DA49801C112E690072E6DA /* PaperInfo+CoreDataProperties.h */,
 				A9DA49811C112E690072E6DA /* PaperInfo+CoreDataProperties.m */,
 				A9DA49821C112E690072E6DA /* PaperInfo.h */,
@@ -375,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A925F0DA1C17D38600174971 /* PracticeViewController.xib in Resources */,
 				D364BCBD1C0DE06F006D2E1F /* next@3x.png in Resources */,
 				D364BCBE1C0DE06F006D2E1F /* paper@2x.png in Resources */,
 				A99FAFE71C02B366008E0F21 /* LaunchScreen.storyboard in Resources */,
@@ -416,7 +435,9 @@
 				A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */,
 				A9DA49881C112EDC0072E6DA /* JsonDataManager.m in Sources */,
 				A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */,
+				A925F0D81C17D30500174971 /* PracticeViewController.m in Sources */,
 				A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */,
+				A925F0DF1C17DAEB00174971 /* Question+CoreDataProperties.m in Sources */,
 				D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */,
 				A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
@@ -427,6 +448,7 @@
 				A9DA495D1C0E9AEF0072E6DA /* ProgressHUD.m in Sources */,
 				A99FB0101C02B589008E0F21 /* BookmarkQuestionViewController.m in Sources */,
 				A99FB00C1C02B545008E0F21 /* PaperInfoViewController.m in Sources */,
+				A925F0E01C17DAEB00174971 /* Question.m in Sources */,
 				A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */,
 				A9DA49851C112E690072E6DA /* PaperInfo.m in Sources */,
 			);

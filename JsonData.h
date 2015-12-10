@@ -13,8 +13,8 @@
 @property (nonatomic, copy)NSArray *jsonArr;
 @property (nonatomic, weak) id<JsonDataDelegate>delegate;
 -(void)getPapers;
--(void)getQuestions;
 
+-(void)getQuestionsWithPaperID:(NSString*) paperID;
 @end
 
 @protocol JsonDataDelegate
