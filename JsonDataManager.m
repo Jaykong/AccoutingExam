@@ -8,9 +8,13 @@
 
 #import "JsonDataManager.h"
 #import "AppDelegate.h"
-#import "Question+CoreDataProperties.h"
+#import "Question.h"
+#import "QuestionOption.h"
 static NSString *const PaperInfoEntityName = @"PaperInfo";
 static NSString *const QuestionEntityName = @"Question";
+
+static NSString *const OptionEntityName = @"QuestionOption";
+
 @implementation JsonDataManager
 
 
@@ -49,7 +53,6 @@ static NSString *const QuestionEntityName = @"Question";
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
     Question *question = [NSEntityDescription insertNewObjectForEntityForName:QuestionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
-    
     question.title = title;
     question.paperID = paperID;
     question.paperType = paperType;
@@ -72,7 +75,22 @@ static NSString *const QuestionEntityName = @"Question";
     //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"paperID like %@",_paperID];
     //request.predicate =
     NSError *error = [[NSError alloc] init];
-    NSArray *arr = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray *arr = [[appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+    NSArray *arrDescriptor = [NSArray arrayWithObject:descriptor];
+   arr = [[arr sortedArrayUsingDescriptors:arrDescriptor] mutableCopy];
+    
+   // [arr sortUsingDescriptors:arrDescriptor];
     return arr;
 }
+#pragma -mark Question Option Operations
+
+-(void)insertIntoQuestionOption:(NSString *)title questionID:(NSString *)questionID {
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    QuestionOption *qOption = [NSEntityDescription insertNewObjectForEntityForName:OptionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
+    qOption.optionContent = title;
+    qOption.questionID = questionID;
+    
+}
+
 @end

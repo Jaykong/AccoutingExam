@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A903BA631C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A903BA601C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.m */; };
+		A903BA641C1A7F7F00F55FBB /* QuestionOption.m in Sources */ = {isa = PBXBuildFile; fileRef = A903BA621C1A7F7F00F55FBB /* QuestionOption.m */; };
 		A925F0D81C17D30500174971 /* PracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A925F0D71C17D30500174971 /* PracticeViewController.m */; };
 		A925F0DA1C17D38600174971 /* PracticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A925F0D91C17D38600174971 /* PracticeViewController.xib */; };
 		A925F0DF1C17DAEB00174971 /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A925F0DC1C17DAEB00174971 /* Question+CoreDataProperties.m */; };
@@ -63,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A903BA5F1C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QuestionOption+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A903BA601C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QuestionOption+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A903BA611C1A7F7F00F55FBB /* QuestionOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionOption.h; sourceTree = "<group>"; };
+		A903BA621C1A7F7F00F55FBB /* QuestionOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionOption.m; sourceTree = "<group>"; };
 		A925F0D61C17D30500174971 /* PracticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeViewController.h; sourceTree = "<group>"; };
 		A925F0D71C17D30500174971 /* PracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeViewController.m; sourceTree = "<group>"; };
 		A925F0D91C17D38600174971 /* PracticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PracticeViewController.xib; sourceTree = "<group>"; };
@@ -151,9 +157,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A903BA651C1A7F9D00F55FBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9DA49861C112EDC0072E6DA /* JsonDataManager.h */,
+				A9DA49871C112EDC0072E6DA /* JsonDataManager.m */,
+				A9DA49531C0E91E90072E6DA /* JsonData.h */,
+				A9DA49541C0E91E90072E6DA /* JsonData.m */,
+				D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */,
+				D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A99FAFC81C02B366008E0F21 = {
 			isa = PBXGroup;
 			children = (
+				A903BA651C1A7F9D00F55FBB /* Model */,
 				A925F0D61C17D30500174971 /* PracticeViewController.h */,
 				A925F0D71C17D30500174971 /* PracticeViewController.m */,
 				A925F0D91C17D38600174971 /* PracticeViewController.xib */,
@@ -187,6 +207,10 @@
 				A99FAFE51C02B366008E0F21 /* LaunchScreen.storyboard */,
 				A99FAFE81C02B366008E0F21 /* Info.plist */,
 				A99FAFE01C02B366008E0F21 /* AccountingExam.xcdatamodeld */,
+				A903BA5F1C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.h */,
+				A903BA601C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.m */,
+				A903BA611C1A7F7F00F55FBB /* QuestionOption.h */,
+				A903BA621C1A7F7F00F55FBB /* QuestionOption.m */,
 				A925F0DB1C17DAEB00174971 /* Question+CoreDataProperties.h */,
 				A925F0DC1C17DAEB00174971 /* Question+CoreDataProperties.m */,
 				A925F0DD1C17DAEB00174971 /* Question.h */,
@@ -231,12 +255,6 @@
 			children = (
 				A99FB00A1C02B545008E0F21 /* PaperInfoViewController.h */,
 				A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */,
-				A9DA49861C112EDC0072E6DA /* JsonDataManager.h */,
-				A9DA49871C112EDC0072E6DA /* JsonDataManager.m */,
-				A9DA49531C0E91E90072E6DA /* JsonData.h */,
-				A9DA49541C0E91E90072E6DA /* JsonData.m */,
-				D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */,
-				D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */,
 				D364BCC01C0DF1D6006D2E1F /* PaperView.h */,
 				D364BCC11C0DF1D6006D2E1F /* PaperView.m */,
 				A9DA49511C0E8BD60072E6DA /* PaperView.xib */,
@@ -438,6 +456,7 @@
 				A925F0D81C17D30500174971 /* PracticeViewController.m in Sources */,
 				A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */,
 				A925F0DF1C17DAEB00174971 /* Question+CoreDataProperties.m in Sources */,
+				A903BA631C1A7F7F00F55FBB /* QuestionOption+CoreDataProperties.m in Sources */,
 				D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */,
 				A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
@@ -450,6 +469,7 @@
 				A99FB00C1C02B545008E0F21 /* PaperInfoViewController.m in Sources */,
 				A925F0E01C17DAEB00174971 /* Question.m in Sources */,
 				A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */,
+				A903BA641C1A7F7F00F55FBB /* QuestionOption.m in Sources */,
 				A9DA49851C112E690072E6DA /* PaperInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

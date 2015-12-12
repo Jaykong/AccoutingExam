@@ -43,7 +43,7 @@
         NSURL *url = [NSURL URLWithString:@"http://112.124.122.38/acountingExam/getQuestions.php"];
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-        NSString *para = [NSString stringWithFormat:@"paperID=56606d9eb7024"] ;
+        NSString *para = [NSString stringWithFormat:@"paperID=%@",paperID] ;
         request.HTTPMethod = @"POST";
         request.HTTPBody = [para dataUsingEncoding:NSUTF8StringEncoding];
         

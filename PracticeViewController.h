@@ -10,6 +10,7 @@
 #import "PaperInfo.h"
 #import "JsonData.h"
 @interface PracticeViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,JsonDataDelegate>
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property(nonatomic, strong) PaperInfo *paperInfo;
 

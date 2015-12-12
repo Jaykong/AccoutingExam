@@ -134,6 +134,7 @@
     PracticeViewController *controller = [[PracticeViewController alloc] initWithNibName:@"PracticeViewController" bundle:nil];
     
     controller.paperInfo = paperInfo;
+    self.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:controller animated:YES];
 }
 /*

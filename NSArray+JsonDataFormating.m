@@ -9,11 +9,13 @@
 #import "NSArray+JsonDataFormating.h"
 #import "Question+CoreDataProperties.h"
 @implementation NSArray(JsonDataFormating)
+
 +(NSArray *)arrayOfTitlesWithQuestions:(NSArray *)questions {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (Question *q in questions) {
         [arr addObject:q.title];
     }
+   
     return arr;
 }
 
