@@ -2,7 +2,7 @@
 //  QuestionOption+CoreDataProperties.h
 //  AccountingExam
 //
-//  Created by trainer on 12/11/15.
+//  Created by kongyunpeng on 12/17/15.
 //  Copyright © 2015 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QuestionOption (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *questionID;
 @property (nullable, nonatomic, retain) NSString *optionContent;
+@property (nullable, nonatomic, retain) NSString *questionID;
 
 @end
 

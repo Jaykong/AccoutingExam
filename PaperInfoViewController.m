@@ -9,6 +9,7 @@
 #import "PaperInfoViewController.h"
 #import "JsonDataManager.h"
 #import "NSArray+JsonDataFormating.h"
+#import "PracticeScrollViewController.h"
 @interface PaperInfoViewController ()
 {
   
@@ -42,11 +43,11 @@
     [ProgressHUD show:@"加载中..."];
     
     [self getPaperViewFromNibAndConfigure];
-   // self.view = paperView ;
+  
     
-    JsonData *jsonData = [[JsonData alloc] init];
+    JsonDataRequest *jsonData = [[JsonDataRequest alloc] init];
     
-    [jsonData getPapers];
+    [jsonData getPapersFromServer];
     jsonData.delegate = self;
  
 }
@@ -68,11 +69,11 @@
 
 }
 
--(void)DidFinishingLoading:(JsonData *)jsonData{
-    JsonDataManager *manager = [[JsonDataManager alloc] init];
-    [manager insertAllPapers:jsonData.jsonArr];
+-(void)DidFinishingLoading:(JsonDataRequest *)jsonData{
+   // JsonDataManager *manager = [[JsonDataManager alloc] init];
+    [JsonDataManager insertAllPapers:jsonData.jsonArr];
     
-    paperInfos = [manager getPaperInfos];
+    paperInfos = [JsonDataManager getPaperInfos];
    paperTitles = [NSArray arrayOfTitlesWithPaperInfos:paperInfos];
     paperTypes = [NSArray arrayOfTypesWithPaperInfos:paperInfos];
 //paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
@@ -118,20 +119,13 @@
         if (scrollView.contentOffset.x >= 2 * width) {
             paperView.segmentControl.selectedSegmentIndex = 2;
         }
-        
-    
-    
-   
-    
-    
-    
-}
+ }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PaperInfo *paperInfo = [paperInfos objectAtIndex:indexPath.row];
     
-    PracticeViewController *controller = [[PracticeViewController alloc] initWithNibName:@"PracticeViewController" bundle:nil];
+    PracticeScrollViewController *controller = [[PracticeScrollViewController alloc] initWithNibName:@"PracticeScrollViewController" bundle:nil];
     
     controller.paperInfo = paperInfo;
     self.hidesBottomBarWhenPushed = true;

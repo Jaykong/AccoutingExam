@@ -11,11 +11,11 @@
 #import "PaperInfo+CoreDataProperties.h"
 @interface NSArray (JsonDataFormating)
 
-//+(NSArray *)returnPaperTitlesFromJsonArray:(NSArray *)parentArr;
-//+(NSArray *)returnPaperTypesFromJsonArray:(NSArray *)parentArr;
+
 +(NSArray *)arrayOfTitlesWithPaperInfos:(NSArray *)paperInfos;
 +(NSArray *)arrayOfTypesWithPaperInfos:(NSArray *)paperInfos;
 
 +(NSArray *)arrayOfTitlesWithQuestions:(NSArray *)questions;
 
++(NSArray *)arrayOfOptionsWithQuestions:(NSArray *)questions;
 @end

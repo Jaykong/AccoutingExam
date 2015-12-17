@@ -2,7 +2,7 @@
 //  PaperInfo.h
 //  AccountingExam
 //
-//  Created by trainer on 12/4/15.
+//  Created by kongyunpeng on 12/17/15.
 //  Copyright © 2015 trainer. All rights reserved.
 //
 

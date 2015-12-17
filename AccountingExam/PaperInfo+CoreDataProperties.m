@@ -2,7 +2,7 @@
 //  PaperInfo+CoreDataProperties.m
 //  AccountingExam
 //
-//  Created by trainer on 12/4/15.
+//  Created by kongyunpeng on 12/17/15.
 //  Copyright © 2015 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,9 +13,9 @@
 
 @implementation PaperInfo (CoreDataProperties)
 
-@dynamic title;
+@dynamic addTime;
 @dynamic paperID;
 @dynamic paperType;
-@dynamic addTime;
+@dynamic title;
 
 @end

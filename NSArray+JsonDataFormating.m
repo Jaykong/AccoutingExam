@@ -8,6 +8,7 @@
 
 #import "NSArray+JsonDataFormating.h"
 #import "Question+CoreDataProperties.h"
+#import "JsonDataManager.h"
 @implementation NSArray(JsonDataFormating)
 
 +(NSArray *)arrayOfTitlesWithQuestions:(NSArray *)questions {
@@ -18,31 +19,15 @@
    
     return arr;
 }
-
-//+(NSArray *)returnPaperTitlesFromJsonArray:(NSArray *)parentArr{
-//    NSMutableArray *papers = [[NSMutableArray alloc] init];
-//    for (NSDictionary *subDic in parentArr) {
-//        
-//        [papers addObject:[subDic valueForKey:@"title"]];
-//        
-//    }
-//    return papers;
-//}
-//
-//+(NSArray *)returnPaperTypesFromJsonArray:(NSArray *)parentArr {
-//    NSMutableArray *papers = [[NSMutableArray alloc] init];
-//    for (NSDictionary *subDic in parentArr) {
-//        NSString *paperType = [subDic valueForKey:@"paperType"];
-//        if (![papers containsObject:paperType]) {
-//            [papers addObject:paperType];
-//        }
-//        
-//       
-//        
-//    }
-//    return papers;
-//}
-
++(NSArray *)arrayOfOptionsWithQuestions:(NSArray *)questions {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (Question *q in questions) {
+        NSArray *option = [JsonDataManager getQuestionOptionsWithQuestionID:q.questionID];
+        [arr addObject:option];
+    }
+    
+    return arr;
+}
 +(NSArray *)arrayOfTitlesWithPaperInfos:(NSArray *)paperInfos {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (PaperInfo *p in paperInfos) {

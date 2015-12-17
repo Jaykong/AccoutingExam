@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JsonData.h"
+#import "JsonDataRequest.h"
 #import "PaperView.h"
-#import "PracticeViewController.h"
+
 @interface PaperInfoViewController : UIViewController<JsonDataDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet PaperView *paperView;
 

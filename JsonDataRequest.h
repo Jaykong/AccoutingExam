@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "JsonDataManager.h"
 @protocol JsonDataDelegate;
-@interface JsonData : NSObject
+@interface JsonDataRequest : NSObject
 @property (nonatomic, copy)NSArray *jsonArr;
 @property (nonatomic, weak) id<JsonDataDelegate>delegate;
--(void)getPapers;
+-(void)getPapersFromServer;
 
--(void)getQuestionsWithPaperID:(NSString*) paperID;
+-(void)insertQuestionsFromServerWithPaperID:(NSString*) paperID;
 @end
 
 @protocol JsonDataDelegate
 
--(void)DidFinishingLoading:(JsonData *)jsonData;
+-(void)DidFinishingLoading:(JsonDataRequest *)jsonData;
 
 @end

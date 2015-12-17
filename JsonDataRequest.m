@@ -6,13 +6,13 @@
 //  Copyright © 2015 trainer. All rights reserved.
 //
 
-#import "JsonData.h"
-
-@implementation JsonData
+#import "JsonDataRequest.h"
+#import "PracticeDataModel.h"
+@implementation JsonDataRequest
 //@"http://112.124.122.38/acountingExam/getPaperInfo.php"
 //http://112.124.122.38/acountingExam/getQuestions.php
 
--(void)getPapers{
+-(void)getPapersFromServer{
    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURL *url = [NSURL URLWithString:@"http://112.124.122.38/acountingExam/getPaperInfo.php"];
@@ -28,7 +28,6 @@
             
             [_delegate DidFinishingLoading:self];
             
-            NSLog(@"%@",_jsonArr);
         }
        
     }];
@@ -36,7 +35,7 @@
     [task resume];
 }
 
--(void)getQuestionsWithPaperID:(NSString*) paperID {
+-(void)insertQuestionsFromServerWithPaperID:(NSString*) paperID {
     {
         
         NSURLSession *session = [NSURLSession sharedSession];
@@ -48,15 +47,17 @@
         request.HTTPBody = [para dataUsingEncoding:NSUTF8StringEncoding];
         
         NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@",str);
+           // NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+          //  NSLog(@"%@",str);
             
             NSArray *jSONArr =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             if (!jSONArr) {
                 NSLog(@"Json Serializtion error:%@",error.description);
                 
             } else {
-                _jsonArr = jSONArr;
+                //JsonDataManager *manager = [[JsonDataManager alloc] init];
+                [JsonDataManager insertAllQuestions:jSONArr];
+                
                 [_delegate DidFinishingLoading:self];
                 
             }

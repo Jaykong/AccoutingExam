@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PracticeScrollViewController">
+            <connections>
+                <outlet property="practiceScrollView" destination="B1P-iB-kSf" id="759-Dn-zq9"/>
+                <outlet property="toolbar" destination="1CL-vE-aFR" id="v0E-hu-Wdr"/>
+                <outlet property="view" destination="iN0-l3-epB" id="5Uf-pE-VtI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-iB-kSf">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                </scrollView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CL-vE-aFR">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="g3p-KV-wGd"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="last.png" id="CNQ-6v-WVy">
+                            <connections>
+                                <action selector="lastBtnClicked:" destination="-1" id="jMf-M0-trx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gwY-2d-Maj"/>
+                        <barButtonItem title="查看" id="PVx-NA-sb0">
+                            <connections>
+                                <action selector="checkBtnClicked:" destination="-1" id="5cJ-Me-Nwb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ePP-K8-egx"/>
+                        <barButtonItem image="next.png" id="HBP-hb-Ap5">
+                            <connections>
+                                <action selector="nextBtnClicked:" destination="-1" id="MmJ-tj-XWJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1CL-vE-aFR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2xp-eL-h2k"/>
+                <constraint firstItem="B1P-iB-kSf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4hS-gn-5WB"/>
+                <constraint firstItem="1CL-vE-aFR" firstAttribute="top" secondItem="B1P-iB-kSf" secondAttribute="bottom" id="KuS-Dm-BAy"/>
+                <constraint firstItem="B1P-iB-kSf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fWH-XC-6za"/>
+                <constraint firstAttribute="trailing" secondItem="B1P-iB-kSf" secondAttribute="trailing" id="gUh-np-ARI"/>
+                <constraint firstAttribute="trailing" secondItem="1CL-vE-aFR" secondAttribute="trailing" id="hG6-PB-1QD"/>
+                <constraint firstAttribute="bottom" secondItem="1CL-vE-aFR" secondAttribute="bottom" id="nd6-bj-M3D"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="last.png" width="22" height="22"/>
+        <image name="next.png" width="22" height="22"/>
+    </resources>
+</document>
