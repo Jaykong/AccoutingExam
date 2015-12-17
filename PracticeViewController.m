@@ -11,10 +11,13 @@
 #import "JsonDataManager.h"
 #import "JsonData.h"
 #import "NSArray+JsonDataFormating.h"
+#import "Question.h"
+#import "OptionTableViewCell.h"
 @implementation PracticeViewController
 {
     NSArray *questionTitles;
     NSInteger currentPage;
+    NSArray *options;
 }
 
 #pragma mark - last next Operations
@@ -51,6 +54,7 @@
 }
 -(void)viewDidLoad {
     [super viewDidLoad];
+    
     currentPage = 0;
     self.title = _paperInfo.title;
     [ProgressHUD show:@"loading..."];
@@ -58,6 +62,10 @@
     [jsonData getQuestionsWithPaperID:_paperInfo.paperID];
     jsonData.delegate = self;
     
+    options = @[@"A:cat",@"B:dog",@"C:elephant",@"D:fish"];
+    
+    UINib *nib = [UINib nibWithNibName:@"OptionTableViewCell" bundle:nil];
+    [_tableview registerNib:nib forCellReuseIdentifier:@"OptionTableViewCell"];
     
 }
 -(void)DidFinishingLoading:(JsonData *)jsonData {
@@ -66,6 +74,10 @@
     [manager insertAllQuestions:jsonData.jsonArr];
     NSArray *questions = [manager getQuestions];
     questionTitles = [NSArray arrayOfTitlesWithQuestions:questions];
+    
+    Question *q = [questions objectAtIndex:currentPage];
+    
+    [manager insertQuestionsWithQuestionID:q.questionID jasonArr:jsonData.jsonArr title:nil];
     
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -77,10 +89,23 @@
     
     
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 1) {
+    return options.count;
+    }
    return  1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+      OptionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OptionTableViewCell"];
+        cell.titleLbl.text = [options objectAtIndex:indexPath.row];
+        return cell;
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];

@@ -92,5 +92,18 @@ static NSString *const OptionEntityName = @"QuestionOption";
     qOption.questionID = questionID;
     
 }
+-(void)insertQuestionsWithQuestionID:(NSString *)questionID jasonArr:(NSArray *)jsonArr title:(NSString *)title {
+    for (NSDictionary *dic in jsonArr) {
+        
+        NSArray *options = [dic valueForKey:@"optionContent"];
+        
+        for (NSString *option in options) {
+            NSLog(@"%@",option);
+        [self insertIntoQuestionOption:title questionID:questionID];
+        }
+    }
+    
+}
+
 
 @end

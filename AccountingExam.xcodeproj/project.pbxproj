@@ -29,6 +29,8 @@
 		A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01B1C02B5D2008E0F21 /* FeedbackViewController.m */; };
 		A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */; };
 		A99FB0221C02B5F4008E0F21 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0211C02B5F4008E0F21 /* ShareViewController.m */; };
+		A9D907361C1E62C700B3C2B8 /* OptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D907341C1E62C700B3C2B8 /* OptionTableViewCell.m */; };
+		A9D907371C1E62C700B3C2B8 /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D907351C1E62C700B3C2B8 /* OptionTableViewCell.xib */; };
 		A9DA49521C0E8BD60072E6DA /* PaperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DA49511C0E8BD60072E6DA /* PaperView.xib */; };
 		A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DA49541C0E91E90072E6DA /* JsonData.m */; };
 		A9DA495C1C0E9AEF0072E6DA /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9DA49591C0E9AEF0072E6DA /* ProgressHUD.bundle */; };
@@ -107,6 +109,9 @@
 		A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		A99FB0201C02B5F4008E0F21 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		A99FB0211C02B5F4008E0F21 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		A9D907331C1E62C700B3C2B8 /* OptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionTableViewCell.h; sourceTree = "<group>"; };
+		A9D907341C1E62C700B3C2B8 /* OptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTableViewCell.m; sourceTree = "<group>"; };
+		A9D907351C1E62C700B3C2B8 /* OptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionTableViewCell.xib; sourceTree = "<group>"; };
 		A9DA49511C0E8BD60072E6DA /* PaperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaperView.xib; sourceTree = "<group>"; };
 		A9DA49531C0E91E90072E6DA /* JsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonData.h; sourceTree = "<group>"; };
 		A9DA49541C0E91E90072E6DA /* JsonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonData.m; sourceTree = "<group>"; };
@@ -164,6 +169,9 @@
 				A9DA49871C112EDC0072E6DA /* JsonDataManager.m */,
 				A9DA49531C0E91E90072E6DA /* JsonData.h */,
 				A9DA49541C0E91E90072E6DA /* JsonData.m */,
+				A9D907331C1E62C700B3C2B8 /* OptionTableViewCell.h */,
+				A9D907341C1E62C700B3C2B8 /* OptionTableViewCell.m */,
+				A9D907351C1E62C700B3C2B8 /* OptionTableViewCell.xib */,
 				D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */,
 				D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */,
 			);
@@ -413,6 +421,7 @@
 			files = (
 				A925F0DA1C17D38600174971 /* PracticeViewController.xib in Resources */,
 				D364BCBD1C0DE06F006D2E1F /* next@3x.png in Resources */,
+				A9D907371C1E62C700B3C2B8 /* OptionTableViewCell.xib in Resources */,
 				D364BCBE1C0DE06F006D2E1F /* paper@2x.png in Resources */,
 				A99FAFE71C02B366008E0F21 /* LaunchScreen.storyboard in Resources */,
 				D364BCBB1C0DE06F006D2E1F /* last@3x.png in Resources */,
@@ -460,6 +469,7 @@
 				D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */,
 				A9DA49551C0E91E90072E6DA /* JsonData.m in Sources */,
 				A99FAFD91C02B366008E0F21 /* AppDelegate.m in Sources */,
+				A9D907361C1E62C700B3C2B8 /* OptionTableViewCell.m in Sources */,
 				A9DA49841C112E690072E6DA /* PaperInfo+CoreDataProperties.m in Sources */,
 				D397D6091C109B8700EE3111 /* NSArray+JsonDataFormating.m in Sources */,
 				A99FAFD61C02B366008E0F21 /* main.m in Sources */,

@@ -17,6 +17,7 @@
 -(void)insertAllPapers:(NSArray *)jsonArr;
 -(void)insertAllQuestions:(NSArray *)jsonArr;
 -(NSArray *)getQuestions;
+-(void)insertQuestionsWithQuestionID:(NSString *)questionID jasonArr:(NSArray *)jsonArr title:(NSString *)title;
 @end
 
 //@protocol JsonDataManagerDelegate
