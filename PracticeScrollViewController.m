@@ -10,7 +10,9 @@
 #import "QuestionOption.h"
 #import "ProgressHUD.h"
 @implementation PracticeScrollViewController
-
+{
+    NSArray *questions;
+}
 -(void)viewDidLoad {
     [ProgressHUD show:@"加载中"];
     self.numbersOfSection = 2;
@@ -22,6 +24,7 @@
     jsonData.delegate = self;
     
     _practiceScrollView.frame = CGRectMake(_practiceScrollView.frame.origin.x, _practiceScrollView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    
     CGFloat height = _practiceScrollView.frame.size.height;
     CGFloat width = _practiceScrollView.frame.size.width;
     _tableView = [[CopyTableView alloc] initWithFrame:_practiceScrollView.frame style:UITableViewStylePlain];
@@ -72,7 +75,7 @@
             --_currentPage;
             --_nextPage;
             [self validAllPages];
-             [self reloadAllTableViews];
+            [self reloadAllTableViews];
             scrollView.contentOffset = CGPointMake(scrollView.frame.size.width, 0);
             }
         
@@ -112,16 +115,23 @@
 
 -(void)DidFinishingLoading:(JsonDataRequest *)jsonData {
     
-    NSArray *questions = [JsonDataManager getQuestions];
+[JsonDataManager insertAllQuestions:jsonData.jsonArr];
     
-    self.questionTitles = [NSArray arrayOfTitlesWithQuestions:questions];
-    self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
+    sleep(4);
+    
+questions = [JsonDataManager getQuestions];
+    
+self.questionTitles = [NSArray arrayOfTitlesWithQuestions:questions];
+    
+self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
     
     self.currentPage = 0;
     self.prePage = -1;
     self.nextPage = 1;
     [self validAllPages];
+    _practiceScrollView.contentOffset = CGPointMake(_practiceScrollView.frame.size.width, 0);
     
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self reloadAllTableViews];
         [ProgressHUD dismiss];
@@ -162,7 +172,28 @@
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == _tableView) {
+        
+    }
+    if (tableView == _tableView3) {
+        
+    }
+    
     if (tableView == _tableView2) {
+        if (indexPath.section == 1) {
+            NSArray *option = [_questionOptions objectAtIndex:_currentPage];
+            
+            if (option.count != 0) {
+                QuestionOption *optionElement = [option objectAtIndex:indexPath.row];
+                Question *q = [questions objectAtIndex:_currentPage];
+                q.userAnswer = optionElement.optionContent;
+                NSLog(@"%@",q.userAnswer);
+                
+            }
+            
+            
+            
+        }
         
         [self reloadAllTableViews];
     }
@@ -200,6 +231,23 @@
        
         if (indexPath.row < option.count) {
           QuestionOption *optionElement = [option objectAtIndex:indexPath.row];
+            
+            Question *q = [questions objectAtIndex:_reusePage];
+//            if ([q.answer isEqualToString:q.userAnswer]) {
+//                
+//            }
+           // NSLog(@"%@",q.userAnswer);
+            if (q.userAnswer == nil) {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            } else {
+                
+                if ([q.userAnswer isEqualToString:optionElement.optionContent]) {
+                   cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                } else {
+                    cell.accessoryType = UITableViewCellAccessoryNone;
+                }
+            }
+            
           cell.textLabel.text = optionElement.optionContent;
         } else {
           cell.textLabel.text = @"服务器数据错误";

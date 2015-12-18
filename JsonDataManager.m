@@ -17,8 +17,6 @@ static NSString *const OptionEntityName = @"QuestionOption";
 
 @implementation JsonDataManager
 
-
-
 +(void)insertIntoPaperInfo:(NSString *)title paperID:(NSString *)paperID paperType:(NSString *)paperType {
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
    NSArray *arr = [JsonDataManager findPaperInfoWithPaperID:paperID];
@@ -118,11 +116,7 @@ return arr;
 
 +(void)insertIntoQuestionOption:(NSString *)title questionID:(NSString *)questionID {
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-   
-   
-    
-   
-        QuestionOption *qOption = [NSEntityDescription insertNewObjectForEntityForName:OptionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
+           QuestionOption *qOption = [NSEntityDescription insertNewObjectForEntityForName:OptionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
         qOption.optionContent = title;
         qOption.questionID = questionID;
     

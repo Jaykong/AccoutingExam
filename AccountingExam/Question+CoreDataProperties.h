@@ -2,7 +2,7 @@
 //  Question+CoreDataProperties.h
 //  AccountingExam
 //
-//  Created by kongyunpeng on 12/17/15.
+//  Created by trainer on 12/18/15.
 //  Copyright © 2015 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *paperType;
 @property (nullable, nonatomic, retain) NSString *questionID;
 @property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSString *answer;
+@property (nullable, nonatomic, retain) NSString *userAnswer;
 
 @end
 

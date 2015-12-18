@@ -38,6 +38,7 @@
    
  
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [ProgressHUD show:@"加载中..."];
@@ -128,7 +129,9 @@
     PracticeScrollViewController *controller = [[PracticeScrollViewController alloc] initWithNibName:@"PracticeScrollViewController" bundle:nil];
     
     controller.paperInfo = paperInfo;
-    self.hidesBottomBarWhenPushed = true;
+    
+    controller.hidesBottomBarWhenPushed = YES;
+   
     [self.navigationController pushViewController:controller animated:YES];
 }
 /*

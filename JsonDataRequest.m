@@ -56,7 +56,8 @@
                 
             } else {
                 //JsonDataManager *manager = [[JsonDataManager alloc] init];
-                [JsonDataManager insertAllQuestions:jSONArr];
+                _jsonArr = jSONArr;
+                //[JsonDataManager insertAllQuestions:jSONArr];
                 
                 [_delegate DidFinishingLoading:self];
                 

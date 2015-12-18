@@ -56,6 +56,7 @@
                 <constraint firstAttribute="trailing" secondItem="1CL-vE-aFR" secondAttribute="trailing" id="hG6-PB-1QD"/>
                 <constraint firstAttribute="bottom" secondItem="1CL-vE-aFR" secondAttribute="bottom" id="nd6-bj-M3D"/>
             </constraints>
+            <point key="canvasLocation" x="296" y="230"/>
         </view>
     </objects>
     <resources>

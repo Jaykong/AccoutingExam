@@ -30,5 +30,6 @@
 @property (nonatomic,strong) NSArray *questionOptions;
 
 -(void)reloadAllTableViews;
+
 @property(nonatomic, strong) PaperInfo *paperInfo;
 @end
