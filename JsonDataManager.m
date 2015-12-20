@@ -62,8 +62,9 @@ static NSString *const OptionEntityName = @"QuestionOption";
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
     NSArray *arr = [JsonDataManager findQuestionWithQuestionID:questionID];
-    Question *question ;
+    
     if (arr.count == 0) {
+        Question *question ;
         question = [NSEntityDescription insertNewObjectForEntityForName:QuestionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
         question.title = title;
         question.paperID = paperID;
@@ -79,6 +80,7 @@ static NSString *const OptionEntityName = @"QuestionOption";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:QuestionEntityName];
     NSPredicate *prediate = [NSPredicate predicateWithFormat:@"questionID like %@",questionID];
     request.predicate = prediate;
+    
     NSArray *arr = [appDelegate.managedObjectContext executeFetchRequest:request error:nil];
     return arr;
 }

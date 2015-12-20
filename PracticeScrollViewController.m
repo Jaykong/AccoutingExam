@@ -115,9 +115,9 @@
 
 -(void)DidFinishingLoading:(JsonDataRequest *)jsonData {
     
-[JsonDataManager insertAllQuestions:jsonData.jsonArr];
+//[JsonDataManager insertAllQuestions:jsonData.jsonArr];
     
-    sleep(4);
+   // sleep(4);
     
 questions = [JsonDataManager getQuestions];
     
