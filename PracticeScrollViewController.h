@@ -27,8 +27,12 @@
 @property (nonatomic,assign) NSInteger numbersOfSection;
 
 @property (nonatomic,strong) NSArray *questionTitles;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextBarBtn;
 @property (nonatomic,strong) NSArray *questionOptions;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *lastBarBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *flexibleBarBtn;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *checkBarBtn;
 -(void)reloadAllTableViews;
 
 @property(nonatomic, strong) PaperInfo *paperInfo;

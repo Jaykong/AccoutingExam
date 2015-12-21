@@ -13,15 +13,25 @@
 {
     NSArray *questions;
 }
--(void)viewDidLoad {
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [ProgressHUD show:@"加载中"];
     self.numbersOfSection = 2;
     
+    NSArray *quesArr = [JsonDataManager getQuestions];
+    JsonDataRequest *jsonData;
+    jsonData = [[JsonDataRequest alloc] init];
+    if (quesArr.count == 0) {
+        [jsonData insertQuestionsFromServerWithPaperID:_paperInfo.paperID];
+        jsonData.delegate = self;
+
+    } else {
+        [self DidFinishingLoading:nil];
+    }
+   
     
-    JsonDataRequest *jsonData = [[JsonDataRequest alloc] init];
-    [jsonData insertQuestionsFromServerWithPaperID:_paperInfo.paperID];
     
-    jsonData.delegate = self;
+    
     
     _practiceScrollView.frame = CGRectMake(_practiceScrollView.frame.origin.x, _practiceScrollView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
@@ -58,7 +68,8 @@
     _practiceScrollView.contentOffset = CGPointMake(width, 0);
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
- 
+    
+    
  }
 
 
@@ -109,10 +120,26 @@
 }
 
 - (IBAction)checkBtnClicked:(id)sender {
- 
+    [self submitAnswerWithIndexPath:nil isChecked:YES];
+    [self reloadAllTableViews];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 44, 44);
+    [btn setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateNormal];
+   // [btn setTitle:@"收藏" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(bookmarkPressed) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnItem =
+    [[UIBarButtonItem alloc] initWithCustomView:btn];
+    _checkBarBtn = btnItem;
+    NSArray *items = [NSArray arrayWithObjects:_lastBarBtn,_flexibleBarBtn,_checkBarBtn,_flexibleBarBtn,_nextBarBtn,nil];
+    [_toolbar setItems:items animated:YES];
+    
+    
     
 }
-
+-(void)bookmarkPressed {
+    
+}
 -(void)DidFinishingLoading:(JsonDataRequest *)jsonData {
     
 //[JsonDataManager insertAllQuestions:jsonData.jsonArr];
@@ -171,29 +198,34 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
     }
     
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (tableView == _tableView) {
-        
-    }
-    if (tableView == _tableView3) {
-        
-    }
+-(void)submitAnswerWithIndexPath:(NSIndexPath *)indexPath isChecked:(BOOL) isChecked{
+    NSArray *option = [_questionOptions objectAtIndex:_currentPage];
     
+    if (option.count != 0) {
+        
+        Question *q = [questions objectAtIndex:_currentPage];
+        if (isChecked) {
+            q.userAnswer = @" ";
+        } else {
+        QuestionOption *optionElement = [option objectAtIndex:indexPath.row];
+        q.userAnswer = optionElement.optionContent;
+        }
+        NSLog(@"%@",q.userAnswer);
+        
+    }
+
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+   
     if (tableView == _tableView2) {
         if (indexPath.section == 1) {
-            NSArray *option = [_questionOptions objectAtIndex:_currentPage];
-            
-            if (option.count != 0) {
-                QuestionOption *optionElement = [option objectAtIndex:indexPath.row];
-                Question *q = [questions objectAtIndex:_currentPage];
-                q.userAnswer = optionElement.optionContent;
-                NSLog(@"%@",q.userAnswer);
+            [self submitAnswerWithIndexPath:indexPath isChecked:NO];
                 
             }
             
             
             
-        }
+        
         
         [self reloadAllTableViews];
     }

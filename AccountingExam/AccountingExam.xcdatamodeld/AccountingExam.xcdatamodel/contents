@@ -9,6 +9,8 @@
     <entity name="Question" representedClassName="Question" syncable="YES">
         <attribute name="addTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookmarked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isWrong" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="paperID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paperType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="questionID" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,7 +23,7 @@
     </entity>
     <elements>
         <element name="PaperInfo" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Question" positionX="-63" positionY="9" width="128" height="150"/>
+        <element name="Question" positionX="-63" positionY="9" width="128" height="180"/>
         <element name="QuestionOption" positionX="-63" positionY="27" width="128" height="75"/>
     </elements>
 </model>

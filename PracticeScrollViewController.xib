@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PracticeScrollViewController">
             <connections>
+                <outlet property="checkBarBtn" destination="PVx-NA-sb0" id="oaM-ma-8Vk"/>
+                <outlet property="flexibleBarBtn" destination="gwY-2d-Maj" id="HC9-Mi-xq6"/>
+                <outlet property="lastBarBtn" destination="CNQ-6v-WVy" id="sDY-Gc-SF2"/>
+                <outlet property="nextBarBtn" destination="HBP-hb-Ap5" id="KfT-eS-2m1"/>
                 <outlet property="practiceScrollView" destination="B1P-iB-kSf" id="759-Dn-zq9"/>
                 <outlet property="toolbar" destination="1CL-vE-aFR" id="v0E-hu-Wdr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5Uf-pE-VtI"/>

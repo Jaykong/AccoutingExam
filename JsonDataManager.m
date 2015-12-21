@@ -28,7 +28,10 @@ static NSString *const OptionEntityName = @"QuestionOption";
         paperInfo.paperType = paperType;
     }
   
-    
+    NSError *error = nil;
+    if (![appDelegate.managedObjectContext save:&error]) {
+        NSLog(@"error Description %@",error);
+    }
 }
 +(NSArray *)findPaperInfoWithPaperID:(NSString*)paperID {
   AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
@@ -72,6 +75,10 @@ static NSString *const OptionEntityName = @"QuestionOption";
         question.questionID = questionID;
         question.addTime = [NSDate date];
         
+    }
+    NSError *error = nil;
+    if (![appDelegate.managedObjectContext save:&error]) {
+        NSLog(@"error Description %@",error);
     }
 }
 
@@ -121,7 +128,10 @@ return arr;
            QuestionOption *qOption = [NSEntityDescription insertNewObjectForEntityForName:OptionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
         qOption.optionContent = title;
         qOption.questionID = questionID;
-    
+    NSError *error = nil;
+    if (![appDelegate.managedObjectContext save:&error]) {
+        NSLog(@"error Description %@",error);
+    }
  
     
  }
