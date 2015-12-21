@@ -16,7 +16,7 @@
 +(NSArray *)getPaperInfos;
 +(void)insertAllPapers:(NSArray *)jsonArr;
 +(void)insertAllQuestions:(NSArray *)jsonArr;
-+(NSArray *)getQuestions;
++(NSArray *)getQuestionsWithPaperID:(NSString *)paperID;
 
 +(NSArray *)getQuestionOptionsWithQuestionID:(NSString *)questionID ;
 @end

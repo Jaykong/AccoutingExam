@@ -47,16 +47,13 @@
         request.HTTPBody = [para dataUsingEncoding:NSUTF8StringEncoding];
         
         NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-           // NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-          //  NSLog(@"%@",str);
-            
+       
             NSArray *jSONArr =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             if (!jSONArr) {
                 NSLog(@"Json Serializtion error:%@",error.description);
                 
             } else {
-                //JsonDataManager *manager = [[JsonDataManager alloc] init];
-               // _jsonArr = jSONArr;
+               
                 [JsonDataManager insertAllQuestions:jSONArr];
                 
                 [_delegate DidFinishingLoading:self];

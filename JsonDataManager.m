@@ -64,9 +64,9 @@ static NSString *const OptionEntityName = @"QuestionOption";
 +(void)insertIntoQuestion:(NSString *)title paperID:(NSString *)paperID paperType:(NSString *)paperType questionID:(NSString *)questionID {
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
-    NSArray *arr = [JsonDataManager findQuestionWithQuestionID:questionID];
+    //NSArray *arr = [JsonDataManager findQuestionWithQuestionID:questionID];
     
-    if (arr.count == 0) {
+   // if (arr.count == 0) {
         Question *question ;
         question = [NSEntityDescription insertNewObjectForEntityForName:QuestionEntityName inManagedObjectContext:appDelegate.managedObjectContext];
         question.title = title;
@@ -75,7 +75,7 @@ static NSString *const OptionEntityName = @"QuestionOption";
         question.questionID = questionID;
         question.addTime = [NSDate date];
         
-    }
+   // }
     NSError *error = nil;
     if (![appDelegate.managedObjectContext save:&error]) {
         NSLog(@"error Description %@",error);
@@ -101,24 +101,28 @@ static NSString *const OptionEntityName = @"QuestionOption";
         [JsonDataManager insertIntoQuestion:title paperID:paperID paperType:paperType questionID:questionID];
         NSArray *options = [dic valueForKey:@"optionContent"];
         
-         NSArray *arr = [JsonDataManager findQuestionOptionWithQuestionID:questionID];
-        if (arr.count == 0) {
+         //NSArray *arr = [JsonDataManager findQuestionOptionWithQuestionID:questionID];
+       // if (arr.count == 0) {
             for (NSString *option in options) {
                 [JsonDataManager insertIntoQuestionOption:option questionID:questionID];
             }
-        }
+        //}
     }
     
 }
-+(NSArray *)getQuestions {
++(NSArray *)getQuestionsWithPaperID:(NSString *)paperID {
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:QuestionEntityName];
     
     NSError *error = nil;
-    NSMutableArray *arr = [[appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"addTime" ascending:YES];
     NSArray *arrDescriptor = [NSArray arrayWithObject:descriptor];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"paperID=%@",paperID];
+    request.predicate = predicate;
+    NSMutableArray *arr = [[appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
    arr = [[arr sortedArrayUsingDescriptors:arrDescriptor] mutableCopy];
+    
 return arr;
 }
 #pragma -mark Question Option Operations

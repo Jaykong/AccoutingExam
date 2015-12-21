@@ -18,16 +18,16 @@
     [ProgressHUD show:@"加载中"];
     self.numbersOfSection = 2;
     
-    NSArray *quesArr = [JsonDataManager getQuestions];
+    NSArray *quesArr = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID];
     JsonDataRequest *jsonData;
     jsonData = [[JsonDataRequest alloc] init];
     if (quesArr.count == 0) {
         [jsonData insertQuestionsFromServerWithPaperID:_paperInfo.paperID];
         jsonData.delegate = self;
 
-    } else {
-        [self DidFinishingLoading:nil];
-    }
+   } else {
+      [self DidFinishingLoading:nil];
+   }
    
     
     
@@ -146,7 +146,7 @@
     
    // sleep(4);
     
-questions = [JsonDataManager getQuestions];
+questions = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID];
     
 self.questionTitles = [NSArray arrayOfTitlesWithQuestions:questions];
     
