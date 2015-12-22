@@ -92,7 +92,7 @@ static NSString *const OptionEntityName = @"QuestionOption";
     return arr;
 }
 
-+(void)insertAllQuestions:(NSArray *)jsonArr {
+-(void)insertAllQuestions:(NSArray *)jsonArr {
     for (NSDictionary *dic in jsonArr) {
         NSString *title = [dic valueForKey:@"title"];
         NSString *paperID = [dic valueForKey:@"paperID"];

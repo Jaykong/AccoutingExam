@@ -15,7 +15,7 @@
 //获取数据
 +(NSArray *)getPaperInfos;
 +(void)insertAllPapers:(NSArray *)jsonArr;
-+(void)insertAllQuestions:(NSArray *)jsonArr;
+-(void)insertAllQuestions:(NSArray *)jsonArr;
 +(NSArray *)getQuestionsWithPaperID:(NSString *)paperID;
 
 +(NSArray *)getQuestionOptionsWithQuestionID:(NSString *)questionID ;

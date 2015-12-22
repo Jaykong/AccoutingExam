@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "UMSocialWechatHandler.h"
+#import <UMSocialSnsService.h>
+#import <UMSocial.h>
 @interface AppDelegate ()
 
 @end
@@ -16,9 +18,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //设置微信AppId、appSecret，分享url
+    [UMSocialData setAppKey:@"562109f8e0f55a65480033a0"];
+    [UMSocialWechatHandler setWXAppId:@"wxfc619fa7dd3a40fc" appSecret:@"a7e29f2264c8d9e1a8eb7bcc6c098d00" url:@"https://itunes.apple.com/us/app/bao-guan-yuan-zhen-ti/id1050091469?ls=1&mt=8"];
     return YES;
 }
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return result;
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

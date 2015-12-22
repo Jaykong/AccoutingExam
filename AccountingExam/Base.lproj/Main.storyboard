@@ -6,25 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--题库-->
-        <scene sceneID="C4G-bs-XSY">
-            <objects>
-                <viewController id="b9L-Ja-wzH" customClass="QuestonLibraryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wd9-dT-34t"/>
-                        <viewControllerLayoutGuide type="bottom" id="h7g-Hf-CX6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8DX-HX-n0e">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="题库" id="9h8-ft-h0A"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lRw-c0-p9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1276" y="371"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="G6M-76-kLa">
             <objects>
@@ -43,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8L-fh-M9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="-540"/>
+            <point key="canvasLocation" x="584" y="-496"/>
         </scene>
         <!--Paper Info View Controller-->
         <scene sceneID="dBi-Wz-HbH">
@@ -142,20 +123,30 @@
         <scene sceneID="2gV-6A-p0W">
             <objects>
                 <viewController id="Sq2-j7-Ac8" customClass="MoreViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YzO-dW-eDj"/>
-                        <viewControllerLayoutGuide type="bottom" id="qGl-bv-tVK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wmB-Sy-Tia">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0aF-Ic-INI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreCell" id="Vt5-Fz-jG8">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vt5-Fz-jG8" id="foR-9F-u67">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sq2-j7-Ac8" id="3r9-b9-cfI"/>
+                            <outlet property="delegate" destination="Sq2-j7-Ac8" id="00q-Kv-kMe"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="WS7-Eu-BhV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fop-Xe-blB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1423" y="1107"/>
+            <point key="canvasLocation" x="1215" y="267"/>
         </scene>
         <!--试卷-->
         <scene sceneID="hGu-rX-Kc0">
@@ -231,7 +222,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjR-6S-zUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="1080"/>
+            <point key="canvasLocation" x="592" y="286"/>
         </scene>
     </scenes>
     <resources>

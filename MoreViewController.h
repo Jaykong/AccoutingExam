@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MoreViewController : UIViewController
+#import <UMSocialControllerService.h>
+@interface MoreViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate>
 
 @end

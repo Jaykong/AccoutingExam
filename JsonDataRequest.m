@@ -53,8 +53,10 @@
                 NSLog(@"Json Serializtion error:%@",error.description);
                 
             } else {
-               
-                [JsonDataManager insertAllQuestions:jSONArr];
+                JsonDataManager *manager = [[JsonDataManager alloc] init];
+                [manager performSelectorOnMainThread:@selector(insertAllQuestions:) withObject:nil waitUntilDone:YES];
+                
+                [manager insertAllQuestions:jSONArr];
                 
                 [_delegate DidFinishingLoading:self];
                 
