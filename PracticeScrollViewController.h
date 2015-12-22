@@ -36,4 +36,8 @@
 -(void)reloadAllTableViews;
 
 @property(nonatomic, strong) PaperInfo *paperInfo;
+
 @end
+typedef enum {
+    Check, Bookmarked,NotBookmarked
+} MiddleItemInToolbarStatus;

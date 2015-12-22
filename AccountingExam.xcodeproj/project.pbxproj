@@ -21,7 +21,6 @@
 		A99FB00C1C02B545008E0F21 /* PaperInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB00B1C02B545008E0F21 /* PaperInfoViewController.m */; };
 		A99FB0101C02B589008E0F21 /* BookmarkQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */; };
 		A99FB0131C02B59C008E0F21 /* WrongQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0121C02B59C008E0F21 /* WrongQuestionViewController.m */; };
-		A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0151C02B5AB008E0F21 /* QuestonLibraryViewController.m */; };
 		A99FB0191C02B5C3008E0F21 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB0181C02B5C3008E0F21 /* MoreViewController.m */; };
 		A99FB01C1C02B5D2008E0F21 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01B1C02B5D2008E0F21 /* FeedbackViewController.m */; };
 		A99FB01F1C02B5E2008E0F21 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FB01E1C02B5E2008E0F21 /* AboutViewController.m */; };
@@ -49,6 +48,7 @@
 		D364BCBF1C0DE06F006D2E1F /* practice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D364BCB81C0DE06F006D2E1F /* practice@2x.png */; };
 		D364BCC21C0DF1D6006D2E1F /* PaperView.m in Sources */ = {isa = PBXBuildFile; fileRef = D364BCC11C0DF1D6006D2E1F /* PaperView.m */; };
 		D397D6091C109B8700EE3111 /* NSArray+JsonDataFormating.m in Sources */ = {isa = PBXBuildFile; fileRef = D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */; };
+		D3B45C981C29CE220098071C /* moreFb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B45C971C29CE220098071C /* moreFb@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +96,6 @@
 		A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkQuestionViewController.m; sourceTree = "<group>"; };
 		A99FB0111C02B59C008E0F21 /* WrongQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrongQuestionViewController.h; sourceTree = "<group>"; };
 		A99FB0121C02B59C008E0F21 /* WrongQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrongQuestionViewController.m; sourceTree = "<group>"; };
-		A99FB0141C02B5AB008E0F21 /* QuestonLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestonLibraryViewController.h; sourceTree = "<group>"; };
-		A99FB0151C02B5AB008E0F21 /* QuestonLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestonLibraryViewController.m; sourceTree = "<group>"; };
 		A99FB0171C02B5C3008E0F21 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		A99FB0181C02B5C3008E0F21 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		A99FB01A1C02B5D2008E0F21 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
@@ -141,6 +139,7 @@
 		D364BCC11C0DF1D6006D2E1F /* PaperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperView.m; sourceTree = "<group>"; };
 		D397D6071C109B8700EE3111 /* NSArray+JsonDataFormating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JsonDataFormating.h"; sourceTree = "<group>"; };
 		D397D6081C109B8700EE3111 /* NSArray+JsonDataFormating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JsonDataFormating.m"; sourceTree = "<group>"; };
+		D3B45C971C29CE220098071C /* moreFb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreFb@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,8 +279,6 @@
 				A99FB00F1C02B589008E0F21 /* BookmarkQuestionViewController.m */,
 				A99FB0111C02B59C008E0F21 /* WrongQuestionViewController.h */,
 				A99FB0121C02B59C008E0F21 /* WrongQuestionViewController.m */,
-				A99FB0141C02B5AB008E0F21 /* QuestonLibraryViewController.h */,
-				A99FB0151C02B5AB008E0F21 /* QuestonLibraryViewController.m */,
 				A99FB0171C02B5C3008E0F21 /* MoreViewController.h */,
 				A99FB0181C02B5C3008E0F21 /* MoreViewController.m */,
 				A99FB01A1C02B5D2008E0F21 /* FeedbackViewController.h */,
@@ -321,6 +318,7 @@
 				D364BCB51C0DE06F006D2E1F /* next@2x.png */,
 				D364BCB61C0DE06F006D2E1F /* next@3x.png */,
 				D364BCB71C0DE06F006D2E1F /* paper@2x.png */,
+				D3B45C971C29CE220098071C /* moreFb@2x.png */,
 				D364BCB81C0DE06F006D2E1F /* practice@2x.png */,
 			);
 			name = Images;
@@ -433,6 +431,7 @@
 				A9D907371C1E62C700B3C2B8 /* OptionTableViewCell.xib in Resources */,
 				D364BCBE1C0DE06F006D2E1F /* paper@2x.png in Resources */,
 				A99FAFE71C02B366008E0F21 /* LaunchScreen.storyboard in Resources */,
+				D3B45C981C29CE220098071C /* moreFb@2x.png in Resources */,
 				D364BCBB1C0DE06F006D2E1F /* last@3x.png in Resources */,
 				A9DA49521C0E8BD60072E6DA /* PaperView.xib in Resources */,
 				D32C75E51C225E06001180D6 /* PracticeScrollViewController.xib in Resources */,
@@ -475,7 +474,6 @@
 				A9DA49881C112EDC0072E6DA /* JsonDataManager.m in Sources */,
 				D32C75E81C22718B001180D6 /* CopyTableView.m in Sources */,
 				D32C75F41C22EFE8001180D6 /* PaperInfo.m in Sources */,
-				A99FB0161C02B5AB008E0F21 /* QuestonLibraryViewController.m in Sources */,
 				D32C75E31C225B6F001180D6 /* PracticeScrollViewController.m in Sources */,
 				A99FAFE21C02B366008E0F21 /* AccountingExam.xcdatamodeld in Sources */,
 				A925F0DF1C17DAEB00174971 /* Question+CoreDataProperties.m in Sources */,
@@ -637,6 +635,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jay.AccountingExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -648,6 +647,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jay.AccountingExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -38,13 +38,12 @@
                         <segue destination="DC5-1H-agb" kind="relationship" relationship="viewControllers" id="gtc-hU-e4w"/>
                         <segue destination="mAo-62-J3T" kind="relationship" relationship="viewControllers" id="MyW-wW-8um"/>
                         <segue destination="lOj-Rb-fCB" kind="relationship" relationship="viewControllers" id="91b-3O-lZy"/>
-                        <segue destination="fwR-iu-TmX" kind="relationship" relationship="viewControllers" id="nzE-Yy-Ad1"/>
                         <segue destination="5xs-bb-0ip" kind="relationship" relationship="viewControllers" id="EYq-YF-dDx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8L-fh-M9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="-475"/>
+            <point key="canvasLocation" x="620" y="-540"/>
         </scene>
         <!--Paper Info View Controller-->
         <scene sceneID="dBi-Wz-HbH">
@@ -99,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVK-7c-5cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1219" y="-687"/>
+            <point key="canvasLocation" x="-1440" y="-806"/>
         </scene>
         <!--Bookmark Question View Controller-->
         <scene sceneID="AcI-4u-RST">
@@ -200,7 +199,7 @@
         <scene sceneID="yZ4-f9-zwM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lOj-Rb-fCB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="错题" id="RLa-El-jJq"/>
+                    <tabBarItem key="tabBarItem" title="错题" image="practice.png" id="RLa-El-jJq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ewV-UL-IUQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -215,30 +214,11 @@
             </objects>
             <point key="canvasLocation" x="1431" y="-452"/>
         </scene>
-        <!--题库-->
-        <scene sceneID="fUl-AX-17T">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fwR-iu-TmX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="题库" id="jEF-eo-Sq2"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOQ-oQ-3R7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="b9L-Ja-wzH" kind="relationship" relationship="rootViewController" id="INX-N6-Mk4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MgS-ew-PxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="587" y="365"/>
-        </scene>
         <!--更多-->
         <scene sceneID="oi4-cP-b3T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5xs-bb-0ip" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="更多" id="3fw-B3-Pth"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="moreFb.png" id="3fw-B3-Pth"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Veb-NE-XJC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -256,6 +236,8 @@
     </scenes>
     <resources>
         <image name="bookmark.png" width="25" height="25"/>
+        <image name="moreFb.png" width="16" height="16"/>
         <image name="paper.png" width="25" height="25"/>
+        <image name="practice.png" width="25" height="25"/>
     </resources>
 </document>

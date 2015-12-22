@@ -12,6 +12,7 @@
 @implementation PracticeScrollViewController
 {
     NSArray *questions;
+    UIButton *btnInBarbtnItem;
 }
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -29,10 +30,6 @@
       [self DidFinishingLoading:nil];
    }
    
-    
-    
-    
-    
     _practiceScrollView.frame = CGRectMake(_practiceScrollView.frame.origin.x, _practiceScrollView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
     CGFloat height = _practiceScrollView.frame.size.height;
@@ -102,12 +99,19 @@
         
     }
 }
+
+-(void)updateTablviewsAndMiddelToolbar {
+    [self reloadAllTableViews];
+    [self setMiddleItemInToolbarStatus];
+}
 - (IBAction)lastBtnClicked:(UIBarButtonItem *)sender {
     --_prePage;
     --_currentPage;
     --_nextPage;
    [self validAllPages];
-   [self reloadAllTableViews];
+   //[self reloadAllTableViews];
+    [self updateTablviewsAndMiddelToolbar];
+    
     
 }
 
@@ -116,30 +120,95 @@
     ++_currentPage;
     ++_nextPage;
     [self validAllPages];
-    [self reloadAllTableViews];
+    //[self reloadAllTableViews];
+    [self updateTablviewsAndMiddelToolbar];
 }
 
 - (IBAction)checkBtnClicked:(id)sender {
     [self submitAnswerWithIndexPath:nil isChecked:YES];
-    [self reloadAllTableViews];
+   // [self reloadAllTableViews];
+    [self updateTablviewsAndMiddelToolbar];
+   
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 44, 44);
-    [btn setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateNormal];
-   // [btn setTitle:@"收藏" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(bookmarkPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+}
+//配置toolbar，使用一个UIButton来初始化UIBarButtonItem，并声明为实例变量，以便可以根据条件判断是否是”查看“、”收藏“、或”已收藏“三个状态。
+-(void)setAEToolbar {
+    btnInBarbtnItem = [self btnUseInBarBtnItem];
     UIBarButtonItem *btnItem =
-    [[UIBarButtonItem alloc] initWithCustomView:btn];
+    [[UIBarButtonItem alloc] initWithCustomView:btnInBarbtnItem];
     _checkBarBtn = btnItem;
+    [self setMiddleItemInToolbarStatus];
     NSArray *items = [NSArray arrayWithObjects:_lastBarBtn,_flexibleBarBtn,_checkBarBtn,_flexibleBarBtn,_nextBarBtn,nil];
     [_toolbar setItems:items animated:YES];
+}
+
+-(MiddleItemInToolbarStatus)getBtnInBarbtnItemStatus {
+    Question *q = questions[_currentPage];
+    NSLog(@"%@",q.userAnswer);
+    if (q.userAnswer == nil) {
+        return Check;
+    }
+    if (q.bookmarked.boolValue) {
+        return Bookmarked;
+    } else return NotBookmarked;
     
     
-    
+}
+
+-(void)setMiddleItemInToolbarStatus{
+    MiddleItemInToolbarStatus status = [self getBtnInBarbtnItemStatus];
+    switch (status) {
+        case Check:
+         [btnInBarbtnItem setTitle:@"查看" forState:UIControlStateNormal];
+            break;
+            
+        case Bookmarked:
+            [btnInBarbtnItem setTitle:@"已收藏" forState:UIControlStateNormal];
+            break;
+        case NotBookmarked:
+            [btnInBarbtnItem setTitle:@"收藏" forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+}
+
+-(UIButton *)btnUseInBarBtnItem {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 100, 44);
+    btn.backgroundColor = [UIColor clearColor];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+   // [btn setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateNormal];
+    [btn setTitle:@"收藏" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(bookmarkPressed) forControlEvents:UIControlEventTouchUpInside];
+    return btn;
 }
 -(void)bookmarkPressed {
+     MiddleItemInToolbarStatus status = [self getBtnInBarbtnItemStatus];
+    if (status == Check) {
+        [self submitAnswerWithIndexPath:nil isChecked:YES];
+        // [self reloadAllTableViews];
+        [self updateTablviewsAndMiddelToolbar];
+ 
+    } else {
     
+   Question *q = questions[_reusePage];
+    if (q.bookmarked.boolValue) {
+        q.bookmarked = [NSNumber numberWithBool:NO];
+       // [btnInBarbtnItem setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateNormal];
+        [btnInBarbtnItem setTitle:@"已收藏" forState:UIControlStateNormal];
+    } else {
+        q.bookmarked = [NSNumber numberWithBool:YES];
+        //[btnInBarbtnItem setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateHighlighted];
+        [btnInBarbtnItem setTitle:@"收藏" forState:UIControlStateNormal];
+    }
+   
+    }
 }
+
+
 -(void)DidFinishingLoading:(JsonDataRequest *)jsonData {
     
 //[JsonDataManager insertAllQuestions:jsonData.jsonArr];
@@ -162,6 +231,7 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self reloadAllTableViews];
         [ProgressHUD dismiss];
+        [self setAEToolbar];
         
     });
     
@@ -205,7 +275,7 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
         
         Question *q = [questions objectAtIndex:_currentPage];
         if (isChecked) {
-            q.userAnswer = @" ";
+            q.userAnswer = @"查看";
         } else {
         QuestionOption *optionElement = [option objectAtIndex:indexPath.row];
         q.userAnswer = optionElement.optionContent;
