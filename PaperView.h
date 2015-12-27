@@ -15,6 +15,6 @@
 @property UITableView *tableview1;
 @property UITableView *tableview2;
 @property UITableView *tableview3;
-
+-(void)setUpSegmentControl:(NSArray *)paperTypes;
 -(void)addPaperView;
 @end

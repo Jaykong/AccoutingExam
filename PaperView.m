@@ -34,8 +34,15 @@
 
 }
 
+
+-(void)setUpSegmentControl:(NSArray *)paperTypes  {
+    for (int i = 0; i < paperTypes.count; ++i) {
+        [_segmentControl setTitle:[paperTypes objectAtIndex:i] forSegmentAtIndex:i];
+    }
+    
+}
 -(void)addPaperView {
-    _segmentControl.translatesAutoresizingMaskIntoConstraints = NO;
+  //  _segmentControl.translatesAutoresizingMaskIntoConstraints = NO;
     _scrollView.pagingEnabled = YES;
    // _scrollView.alwaysBounceHorizontal = YES;
    _scrollView.alwaysBounceVertical=NO;
@@ -79,7 +86,7 @@
     [_scrollView addConstraints:horizontalConstraints3];
     [_scrollView addConstraints:verticalConstraints3];
     */
-   
+  
 }
 
 @end

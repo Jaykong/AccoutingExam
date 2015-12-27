@@ -14,22 +14,16 @@
     NSArray *questions;
     UIButton *btnInBarbtnItem;
 }
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [ProgressHUD show:@"加载中"];
-    self.numbersOfSection = 2;
+-(void)viewWillDisappear:(BOOL)animated {
     
-    NSArray *quesArr = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID];
-    JsonDataRequest *jsonData;
-    jsonData = [[JsonDataRequest alloc] init];
-    if (quesArr.count == 0) {
-        [jsonData insertQuestionsFromServerWithPaperID:_paperInfo.paperID];
-        jsonData.delegate = self;
-
-   } else {
-      [self DidFinishingLoading:nil];
-   }
-   
+    
+}
+- (NSString	*)publisherId
+{
+    return	 	 @"b0d091df";	//@"your_own_app_id";
+}
+-(void)setupViews {
+    
     _practiceScrollView.frame = CGRectMake(_practiceScrollView.frame.origin.x, _practiceScrollView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
     CGFloat height = _practiceScrollView.frame.size.height;
@@ -40,13 +34,13 @@
     _tableView2 = [_tableView copy];
     _tableView3 = [_tableView copy];
     
-   
+    
     [_practiceScrollView addSubview:_tableView];
     
-     _tableView2.frame = CGRectMake(width, 0, width, height);
+    _tableView2.frame = CGRectMake(width, 0, width, height);
     [_practiceScrollView addSubview:_tableView2];
     
-     _tableView3.frame = CGRectMake(2 * width, 0, width, height);
+    _tableView3.frame = CGRectMake(2 * width, 0, width, height);
     [_practiceScrollView addSubview:_tableView3];
     
     _tableView2.delegate = self;
@@ -57,7 +51,7 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
-
+    
     
     _practiceScrollView.contentSize = CGSizeMake(3 * width, height);
     _practiceScrollView.pagingEnabled = YES;
@@ -65,7 +59,58 @@
     _practiceScrollView.contentOffset = CGPointMake(width, 0);
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
+ 
+}
+
+-(void)prepareForData {
+    [ProgressHUD show:@"加载中"];
+    self.numbersOfSection = 2;
+    NSArray *quesArr = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID];
+    JsonDataRequest *jsonData;
+    jsonData = [[JsonDataRequest alloc] init];
+    if (quesArr.count == 0) {
+        [jsonData insertQuestionsFromServerWithPaperID:_paperInfo.paperID];
+        jsonData.delegate = self;
+        
+    } else {
+        [self DidFinishingLoading:nil];
+    }
     
+}
+-(void)prepareForBookData {
+    self.numbersOfSection = 2;
+    [self DidFinishingLoading:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+  
+    switch (_practiceType) {
+        case Practice:
+            [self prepareForData];
+            [ self setupViews];
+           
+            break;
+        case BookMark:
+           [self prepareForBookData];
+            [self setupViews];
+        case Wrong:
+            [self prepareForBookData];
+            [self setupViews];
+            
+        default:
+            break;
+    }
+    
+   
+ BaiduMobAdView *sharedAdView	=	[[BaiduMobAdView	alloc]	init];
+    //把在mssp.baidu.com上创建后获得的代码位id写到这⾥
+    sharedAdView.AdUnitTag	= @" 2071088";
+    sharedAdView.AdType	=	BaiduMobAdViewTypeBanner;
+    sharedAdView.frame	= CGRectMake(0, self.view.bounds.size.height - 20 , self.view.bounds.size.width, 44);
+    sharedAdView.delegate	=	self;
+    [self.view	addSubview:sharedAdView];
+    [sharedAdView start];
     
  }
 
@@ -124,15 +169,7 @@
     [self updateTablviewsAndMiddelToolbar];
 }
 
-- (IBAction)checkBtnClicked:(id)sender {
-    [self submitAnswerWithIndexPath:nil isChecked:YES];
-   // [self reloadAllTableViews];
-    [self updateTablviewsAndMiddelToolbar];
-   
-    
-    
-    
-}
+
 //配置toolbar，使用一个UIButton来初始化UIBarButtonItem，并声明为实例变量，以便可以根据条件判断是否是”查看“、”收藏“、或”已收藏“三个状态。
 -(void)setAEToolbar {
     btnInBarbtnItem = [self btnUseInBarBtnItem];
@@ -191,18 +228,19 @@
         [self submitAnswerWithIndexPath:nil isChecked:YES];
         // [self reloadAllTableViews];
         [self updateTablviewsAndMiddelToolbar];
+        [self AddWrongQuestion];
  
     } else {
     
-   Question *q = questions[_reusePage];
+   Question *q = questions[_currentPage];
     if (q.bookmarked.boolValue) {
         q.bookmarked = [NSNumber numberWithBool:NO];
        // [btnInBarbtnItem setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateNormal];
-        [btnInBarbtnItem setTitle:@"已收藏" forState:UIControlStateNormal];
+        [btnInBarbtnItem setTitle:@"收藏" forState:UIControlStateNormal];
     } else {
         q.bookmarked = [NSNumber numberWithBool:YES];
         //[btnInBarbtnItem setImage:[UIImage imageNamed:@"bookmark"] forState:UIControlStateHighlighted];
-        [btnInBarbtnItem setTitle:@"收藏" forState:UIControlStateNormal];
+        [btnInBarbtnItem setTitle:@"已收藏" forState:UIControlStateNormal];
     }
    
     }
@@ -211,11 +249,15 @@
 
 -(void)DidFinishingLoading:(JsonDataRequest *)jsonData {
     
-//[JsonDataManager insertAllQuestions:jsonData.jsonArr];
-    
-   // sleep(4);
-    
-questions = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID];
+    if (_practiceType == Practice) {
+        questions = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID];
+    }
+    if (_practiceType == BookMark) {
+        questions = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID bookmared:YES];
+    }
+    if (_practiceType == Wrong) {
+        questions = [JsonDataManager getQuestionsWithPaperID:_paperInfo.paperID isWrong:YES];
+    }
     
 self.questionTitles = [NSArray arrayOfTitlesWithQuestions:questions];
     
@@ -254,10 +296,16 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (questions.count == 0) {
+        return 1;
+    }
     return _numbersOfSection;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (questions.count == 0) {
+        return 1;
+    }
     if (section == 0) {
         return  1;
     } else {
@@ -285,6 +333,15 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
     }
 
 }
+-(void)AddWrongQuestion {
+  Question *q = questions[_currentPage];
+    
+    if (![q.userAnswer isEqualToString:q.answer]) {
+      q.isWrong = [NSNumber numberWithBool:YES];
+    }
+    
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
    
     if (tableView == _tableView2) {
@@ -292,12 +349,9 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
             [self submitAnswerWithIndexPath:indexPath isChecked:NO];
                 
             }
-            
-            
-            
-        
-        
-        [self reloadAllTableViews];
+     
+    [self AddWrongQuestion];
+    [self reloadAllTableViews];
     }
     
 }
@@ -316,13 +370,21 @@ self.questionOptions =  [NSArray arrayOfOptionsWithQuestions:questions];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [self setupReusePage:tableView];
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    
     if (cell == nil) {
         cell  = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    
+    if (questions.count == 0) {
+        cell.textLabel.text = @"暂无试题";
+        return cell;
+    }
+    
+    [self setupReusePage:tableView];
+    
+   
     if (indexPath.section == 0) {
        
         cell.textLabel.text = [_questionTitles objectAtIndex:_reusePage];

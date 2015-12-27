@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WrongQuestionViewController : UIViewController
+#import "BookmarkQuestionViewController.h"
+@interface WrongQuestionViewController : BookmarkQuestionViewController
 
 @end

@@ -51,19 +51,16 @@
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-y2-PVV">
                                 <rect key="frame" x="0.0" y="93" width="414" height="594"/>
-                                <connections>
-                                    <outlet property="delegate" destination="PNz-Ag-Bfj" id="4Zj-jd-xc2"/>
-                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ya8-y2-PVV" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="DM9-4l-X5I"/>
+                            <constraint firstItem="AFP-Kp-coD" firstAttribute="top" secondItem="Ya8-y2-PVV" secondAttribute="bottom" id="KXc-6V-ahD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="StO-AJ-RNs" secondAttribute="trailing" constant="-20" id="Tfs-ty-gfg"/>
-                            <constraint firstItem="AFP-Kp-coD" firstAttribute="top" secondItem="Ya8-y2-PVV" secondAttribute="bottom" id="boP-6I-bzs"/>
                             <constraint firstItem="StO-AJ-RNs" firstAttribute="leading" secondItem="ats-kz-1dT" secondAttribute="leadingMargin" constant="-20" id="l8k-Kh-tMJ"/>
-                            <constraint firstItem="StO-AJ-RNs" firstAttribute="top" secondItem="Da8-mI-jUi" secondAttribute="bottom" id="lxK-o5-YMW"/>
                             <constraint firstItem="Ya8-y2-PVV" firstAttribute="top" secondItem="StO-AJ-RNs" secondAttribute="bottom" constant="1" id="qks-jA-YaU"/>
+                            <constraint firstItem="StO-AJ-RNs" firstAttribute="top" secondItem="Da8-mI-jUi" secondAttribute="bottom" id="utT-x0-NPR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ya8-y2-PVV" secondAttribute="trailing" constant="-20" id="vHJ-fR-mso"/>
                         </constraints>
                         <connections>
@@ -79,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVK-7c-5cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1440" y="-806"/>
+            <point key="canvasLocation" x="-1189" y="-1042"/>
         </scene>
         <!--Bookmark Question View Controller-->
         <scene sceneID="AcI-4u-RST">
@@ -89,16 +86,52 @@
                         <viewControllerLayoutGuide type="top" id="Go6-l8-IOt"/>
                         <viewControllerLayoutGuide type="bottom" id="vUZ-Zj-i6q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="o42-xj-Dmq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="o42-xj-Dmq" customClass="PaperView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bov-Ni-OEc">
+                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="ats-kz-1dT" eventType="valueChanged" id="MvT-cv-qfH"/>
+                                </connections>
+                            </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qN-bE-Su6">
+                                <rect key="frame" x="0.0" y="93" width="414" height="593"/>
+                                <connections>
+                                    <outlet property="delegate" destination="z0E-ki-c9H" id="ugw-qg-blz"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bov-Ni-OEc" firstAttribute="top" secondItem="Go6-l8-IOt" secondAttribute="bottom" id="2Bw-lv-dpi"/>
+                            <constraint firstItem="0qN-bE-Su6" firstAttribute="trailing" secondItem="Bov-Ni-OEc" secondAttribute="trailing" id="Aq9-TS-1Wc"/>
+                            <constraint firstItem="0qN-bE-Su6" firstAttribute="leading" secondItem="o42-xj-Dmq" secondAttribute="leading" id="DNe-f5-jhy"/>
+                            <constraint firstAttribute="trailing" secondItem="Bov-Ni-OEc" secondAttribute="trailing" id="KTU-wa-fgR"/>
+                            <constraint firstItem="vUZ-Zj-i6q" firstAttribute="top" secondItem="0qN-bE-Su6" secondAttribute="bottom" constant="1" id="S2g-rY-Z1C"/>
+                            <constraint firstItem="Bov-Ni-OEc" firstAttribute="leading" secondItem="0qN-bE-Su6" secondAttribute="leading" id="XvT-c8-1ta"/>
+                            <constraint firstItem="0qN-bE-Su6" firstAttribute="top" secondItem="Bov-Ni-OEc" secondAttribute="bottom" constant="1" id="tSK-Sg-jFv"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="scrollView" destination="0qN-bE-Su6" id="lA8-S5-D80"/>
+                            <outlet property="segmentControl" destination="Bov-Ni-OEc" id="Hys-Ag-cIz"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="pin-fN-gbs"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="paperView" destination="o42-xj-Dmq" id="ACf-4t-Za6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcR-63-Gvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-1219"/>
+            <point key="canvasLocation" x="1295" y="-1203"/>
         </scene>
         <!--Wrong Question View Controller-->
         <scene sceneID="e1g-tU-z8U">
@@ -108,16 +141,49 @@
                         <viewControllerLayoutGuide type="top" id="rOo-dm-G92"/>
                         <viewControllerLayoutGuide type="bottom" id="X4Y-Ju-hcE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="W3h-Zn-2a0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="W3h-Zn-2a0" customClass="PaperView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cfO-Vd-Qtw">
+                                <rect key="frame" x="0.0" y="65" width="414" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="ats-kz-1dT" eventType="valueChanged" id="pua-s2-W8t"/>
+                                </connections>
+                            </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-eN-dbe">
+                                <rect key="frame" x="0.0" y="94" width="414" height="593"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Goq-eN-dbe" firstAttribute="leading" secondItem="W3h-Zn-2a0" secondAttribute="leading" id="DkR-dW-o85"/>
+                            <constraint firstItem="Goq-eN-dbe" firstAttribute="top" secondItem="cfO-Vd-Qtw" secondAttribute="bottom" constant="1" id="jMt-eu-mv5"/>
+                            <constraint firstItem="cfO-Vd-Qtw" firstAttribute="trailing" secondItem="Goq-eN-dbe" secondAttribute="trailing" id="jmr-XP-x4p"/>
+                            <constraint firstItem="cfO-Vd-Qtw" firstAttribute="top" secondItem="rOo-dm-G92" secondAttribute="bottom" constant="1" id="lqD-J5-w2I"/>
+                            <constraint firstAttribute="trailing" secondItem="Goq-eN-dbe" secondAttribute="trailing" id="sbX-3U-DDs"/>
+                            <constraint firstItem="Goq-eN-dbe" firstAttribute="leading" secondItem="cfO-Vd-Qtw" secondAttribute="leading" id="shV-lN-OnY"/>
+                            <constraint firstItem="Goq-eN-dbe" firstAttribute="bottom" secondItem="X4Y-Ju-hcE" secondAttribute="top" id="xem-do-PU2"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="scrollView" destination="Goq-eN-dbe" id="9BR-JT-Tgv"/>
+                            <outlet property="segmentControl" destination="cfO-Vd-Qtw" id="uZx-UX-2Vr"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Qq8-EK-llE"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="paperView" destination="W3h-Zn-2a0" id="txM-W3-fLU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmR-m8-HnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="-452"/>
+            <point key="canvasLocation" x="1969" y="-529"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="2gV-6A-p0W">
@@ -165,7 +231,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deg-2g-wIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="-676"/>
+            <point key="canvasLocation" x="-544" y="-537"/>
         </scene>
         <!--收藏-->
         <scene sceneID="FAi-KR-p4V">

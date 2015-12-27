@@ -11,17 +11,13 @@
 #import "NSArray+JsonDataFormating.h"
 #import "PracticeScrollViewController.h"
 @interface PaperInfoViewController ()
-{
-  
-    NSArray *paperTitles;
-    NSArray *paperTypes;
-    NSArray *paperInfos;
-}
+
 @end
 
 @implementation PaperInfoViewController
 @synthesize paperView = paperView;
-
+@synthesize paperInfos,paperTitles,paperTypes;
+@synthesize controller;
 
 -(void)getPaperViewFromNibAndConfigure{
 //    UINib *nib = [UINib nibWithNibName:@"PaperView" bundle:nil];
@@ -38,8 +34,11 @@
    
  
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
 - (void)viewDidLoad {
+   
     [super viewDidLoad];
     [ProgressHUD show:@"加载中..."];
     
@@ -47,7 +46,6 @@
   
     
     JsonDataRequest *jsonData = [[JsonDataRequest alloc] init];
-    
     [jsonData getPapersFromServer];
     jsonData.delegate = self;
  
@@ -71,20 +69,19 @@
 }
 
 -(void)DidFinishingLoading:(JsonDataRequest *)jsonData{
-   // JsonDataManager *manager = [[JsonDataManager alloc] init];
     [JsonDataManager insertAllPapers:jsonData.jsonArr];
     
-    paperInfos = [JsonDataManager getPaperInfos];
+   paperInfos = [JsonDataManager getPaperInfos];
    paperTitles = [NSArray arrayOfTitlesWithPaperInfos:paperInfos];
-    paperTypes = [NSArray arrayOfTypesWithPaperInfos:paperInfos];
-//paperTitles = [NSArray returnPaperTitlesFromJsonArray:jsonData.jsonArr];
-//paperTypes = [NSArray returnPaperTypesFromJsonArray:jsonData.jsonArr];
+   paperTypes = [NSArray arrayOfTypesWithPaperInfos:paperInfos];
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self reConfigurePaperView];
     });
     
 }
 #pragma mark - Tableview DataSource Delegate
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [paperTitles count];
 }
@@ -101,14 +98,10 @@
 
 #pragma mark - Scrollview Delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //NSLog(@"%f",scrollView.contentOffset.x);
+ 
     CGFloat width = [[UIScreen mainScreen]bounds].size.width;
-    //CGFloat version =  [[[UIDevice currentDevice] ]floatValue];
-   
-  //@"iPhone 4S"
     
-    
-        if (scrollView.contentOffset.x < width) {
+      if (scrollView.contentOffset.x < width) {
             paperView.segmentControl.selectedSegmentIndex = 0;
             
         }
@@ -126,22 +119,13 @@
     
     PaperInfo *paperInfo = [paperInfos objectAtIndex:indexPath.row];
     
-    PracticeScrollViewController *controller = [[PracticeScrollViewController alloc] initWithNibName:@"PracticeScrollViewController" bundle:nil];
-    
+    controller = [[PracticeScrollViewController alloc] initWithNibName:@"PracticeScrollViewController" bundle:nil];
+    controller.practiceType = Practice;
     controller.paperInfo = paperInfo;
     
     controller.hidesBottomBarWhenPushed = YES;
    
     [self.navigationController pushViewController:controller animated:YES];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

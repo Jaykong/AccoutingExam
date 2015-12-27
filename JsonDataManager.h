@@ -18,7 +18,10 @@
 -(void)insertAllQuestions:(NSArray *)jsonArr;
 +(NSArray *)getQuestionsWithPaperID:(NSString *)paperID;
 
++(NSArray *)getQuestionsWithPaperID:(NSString *)paperID bookmared:(BOOL)bked;
+
 +(NSArray *)getQuestionOptionsWithQuestionID:(NSString *)questionID ;
++(NSArray *)getQuestionsWithPaperID:(NSString *)paperID isWrong:(BOOL)isWrong;
 @end
 
 //@protocol JsonDataManagerDelegate

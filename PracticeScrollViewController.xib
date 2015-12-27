@@ -36,11 +36,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="gwY-2d-Maj"/>
-                        <barButtonItem title="查看" id="PVx-NA-sb0">
-                            <connections>
-                                <action selector="checkBtnClicked:" destination="-1" id="5cJ-Me-Nwb"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem title="查看" id="PVx-NA-sb0"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ePP-K8-egx"/>
                         <barButtonItem image="next.png" id="HBP-hb-Ap5">
                             <connections>

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaperInfoViewController.h"
+#import "PracticeScrollViewController.h"
+@interface BookmarkQuestionViewController :PaperInfoViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,assign)int bookmarkCount;
 
-@interface BookmarkQuestionViewController : UIViewController
 
 @end

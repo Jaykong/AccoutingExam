@@ -125,6 +125,21 @@ static NSString *const OptionEntityName = @"QuestionOption";
     
 return arr;
 }
++(NSArray *)getQuestionsWithPaperID:(NSString *)paperID bookmared:(BOOL)bked {
+  NSArray *arr =  [JsonDataManager getQuestionsWithPaperID:paperID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"bookmarked.boolValue==%i",1];
+    NSArray *newArr = [arr filteredArrayUsingPredicate:predicate];
+    return newArr;
+    
+}
+
++(NSArray *)getQuestionsWithPaperID:(NSString *)paperID isWrong:(BOOL)isWrong {
+    NSArray *arr =  [JsonDataManager getQuestionsWithPaperID:paperID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isWrong.boolValue==%i",1];
+    NSArray *newArr = [arr filteredArrayUsingPredicate:predicate];
+    return newArr;
+    
+}
 #pragma -mark Question Option Operations
 
 +(void)insertIntoQuestionOption:(NSString *)title questionID:(NSString *)questionID {

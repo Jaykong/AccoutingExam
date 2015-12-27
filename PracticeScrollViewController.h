@@ -11,7 +11,14 @@
 #import "Question.h"
 #import "JsonDataRequest.h"
 #import "NSArray+JsonDataFormating.h"
-@interface PracticeScrollViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,JsonDataDelegate>
+#import "BaiduMobAdView.h"
+#import "BaiduMobAdCommonConfig.h"
+typedef enum {
+    BookMark,Wrong,Practice
+} PracticeType;
+@protocol PracticeScrollViewControllerDelegate ;
+
+@interface PracticeScrollViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,JsonDataDelegate,BaiduMobAdViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *practiceScrollView;
 
 @property (nonatomic,strong) CopyTableView *tableView;
@@ -36,8 +43,12 @@
 -(void)reloadAllTableViews;
 
 @property(nonatomic, strong) PaperInfo *paperInfo;
+@property (nonatomic,assign)PracticeType practiceType;
 
 @end
 typedef enum {
     Check, Bookmarked,NotBookmarked
 } MiddleItemInToolbarStatus;
+
+
+
